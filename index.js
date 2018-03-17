@@ -20,7 +20,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", () => {
 	console.log(`${bot.user.username} is online`);
-	bot.user.setActivity("ium help");
+	bot.user.setActivity("ium help | v0.0.2");
 });
 
 bot.on('ready', () => {
