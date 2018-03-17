@@ -7,12 +7,13 @@ exports.run = async (bot, message, args) => {
     .setColor('#000000')
     .setThumbnail(botAvatar)
     .addField("Name", bot.user.username)
-    .addField("Current Version", "0.0.1")
+    .addField("Current Version", "0.0.2")
     .addField("Born On", bot.user.createdAt)
     .addField("Servers", `${bot.guilds.size} servers.`)
     .addField("Users ", `${bot.users.size} online users.`)
     .addField("Made with:", "discord.js")
     .addField("Made by:", "<@275831434772742144>")
+    .addField("Github", "https://github.com/tetra-dev/ium")
     .addField("Memory ", (process.memoryUsage().heapUsed / 1024 / 1024).toFixed() + "MB",);
     
 
