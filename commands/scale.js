@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
 
    //!8ball question
-   if(!args[1]) return message.reply("**Type a question about something that you would scale from 1-10.** ium from a scale 1-10 **how handsome/pretty am I?**");
+   if(!args[1]) return message.reply("**Type a question about something that you would scale from 1-10.** ium scale 1-10 **how handsome/pretty am I?**");
    let replies = ["**1**", "2", "3", "4", "5", "6", "7","8","9","**10**"];
 
    let result = Math.floor((Math.random() * replies.length));
