@@ -26,4 +26,4 @@ exports.run = (bot, message, args) => {
             .addField('Humidity', `${current.humidity}%`, true)
         message.channel.send(embed)
     })
- }
+ } 
