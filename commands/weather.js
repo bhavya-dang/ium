@@ -5,7 +5,7 @@ exports.run = (bot, message, args) => {
     weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) { 
     //   if (err) message.channel.send(err);
       if (result === undefined || result.length === 0) {
-          const embed = new Discord.MessageEmbed()
+          const embed = new Discord.RichEmbed()
           .setAuthor("Please enter a valid location")
           .setColor("RANDOM")
           return message.channel.send(embed);
@@ -13,7 +13,7 @@ exports.run = (bot, message, args) => {
         var current = result[0].current; 
         var location = result[0].location; 
 
-        const embed = new Discord.MessageEmbed()
+        const embed = new Discord.RichEmbed()
             .setDescription(`**${current.skytext}**`)
             .setThumbnail(current.imageUrl) 
             .setAuthor(`Weather for ${current.observationpoint}`) 
