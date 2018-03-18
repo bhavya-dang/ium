@@ -10,7 +10,7 @@ exports.run = async (bot, message, args) => {
     .addField("Current Version", "v0.0.2")
     .addField("Born On", bot.user.createdAt)
     .addField("Servers", `${bot.guilds.size} servers.`)
-    .addField("Users ", `${bot.users.size} online users.`)
+    .addField("Users ", `${bot.users.size} users.`)
     .addField("Made with:", "discord.js")
     .addField("Made by", "<@275831434772742144>")
     .addField("Github", "https://github.com/tetra-dev/ium")
