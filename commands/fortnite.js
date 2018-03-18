@@ -3,7 +3,7 @@ const Fortnite = require('fortnite');
 const stats = new Fortnite(f4f42a31-9a69-488f-8128-6d5b3567bc11); // This will be your API key from the description in replace of 'process.env.TRN'
 const Discord = require('discord.js');
  
-exports.run = (client, message, args, tools) => {
+exports.run = (bot, message, args, tools) => {
  
   // Now, we have 2 variables we need input for, first the platform, then the username.
   let platform;
