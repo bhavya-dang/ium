@@ -7,7 +7,7 @@ exports.run = (bot, message, args) => {
       if (result === undefined || result.length === 0) {
           const embed = new Discord.RichEmbed()
           .setAuthor("Please enter a valid location")
-          .setColor("RANDOM")
+          .setColor("#f5a3fa")
           return message.channel.send(embed);
       }
         var current = result[0].current; 
@@ -17,7 +17,7 @@ exports.run = (bot, message, args) => {
             .setDescription(`**${current.skytext}**`)
             .setThumbnail(current.imageUrl) 
             .setAuthor(`Weather for ${current.observationpoint}`) 
-            .setColor("RANDOM") 
+            .setColor("#f5a3fa") 
             .addField('Timezone', `UTC${location.timezone}`, true) 
             .addField('Degree Type', location.degreetype, true) 
             .addField('Temperature', `${current.temperature} Degrees`, true)
