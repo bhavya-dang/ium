@@ -31,3 +31,7 @@ exports.run = async (bot, message, args) => {
             message.channel.send({weatherEmbed});
     }); 
 }
+
+module.exports.help = {
+    name: weather
+}
