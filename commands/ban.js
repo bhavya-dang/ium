@@ -19,11 +19,11 @@ if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("*
     message.reply(`${member.user.username} has been banned by ${message.author.username} because: **__${reason}__**`);
 
     let Banembed = new Discord.RichEmbed()
+    .setDescription("Kick")
     .setColor("#ecf0f1")
     .setTimestamp()
-    .addField('Action:', 'Ban')
-    .addField('User:', `${member.user.username}#${member.user.discriminator} (${member.user.id})`)
-    .addField('Modrator:', `${message.author.username}#${message.author.discriminator}`)
+    .addField('Banned User', `${member.user.username}#${member.user.discriminator} (${member.user.id})`)
+    .addField('Banned By', `${message.author.username}#${message.author.discriminator}`)
     .addField('Reason', reason);
 
     message.channel.send(Banembed);

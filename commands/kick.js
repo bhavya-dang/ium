@@ -9,7 +9,8 @@ exports.run = async (bot, message, args) => {
     let kickEmbed = new Discord.RichEmbed()
         .setDescription("Kick")
         .setColor("#ecf0f1")
-        .addField("Kicked User", `${kickUser}`)
+        .setTimestamp()
+        .addField("Kicked User", `${kickUser.user.username}#${kickUser.user.discriminator} (${kickUser.user.id})`)
         .addField("Kicked By", `<@${message.author.id}>`);
 
         message.guild.member();
