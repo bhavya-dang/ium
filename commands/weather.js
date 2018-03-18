@@ -13,8 +13,8 @@ exports.run = async (bot, message, args) => {
         }
 
         // Variables
-        var current = result[0].current; 
-        var location = result[0].location; 
+        let current = result[0].current; 
+        let location = result[0].location; 
 
         const weatherEmbed = new Discord.RichEmbed()
             .setDescription(`**${current.skytext}**`) 
