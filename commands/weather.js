@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const weather = require('weather-js')
-exports.run = (client, message, args) => {
+exports.run = (bot, message, args) => {
     
     weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) { 
     //   if (err) message.channel.send(err);
