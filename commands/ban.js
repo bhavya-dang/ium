@@ -10,12 +10,12 @@ if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("*
     if(!member.bannable) 
       return message.reply("**I cannot ban this user!**");
     
-    await member.ban(reason)
+    await member.ban()
       .catch(error => message.reply(`Sorry, I couldn't ban because of : ${error}`));
     message.reply(`${member.user.username} has been banned by ${message.author.username}.`);
 
     let Banembed = new Discord.RichEmbed()
-    .setColor("#00ff00")
+    .setColor("#ecf0f1")
     .setTimestamp()
     .addField('Action:', 'Ban')
     .addField('User:', `${member.user.username}#${member.user.discriminator} (${member.user.id})`)
