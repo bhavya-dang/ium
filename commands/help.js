@@ -9,5 +9,5 @@ exports.run = async (bot, message, args) => {
     .addField("Fun", "dog, 8ball, choose, say, scale")
     .addField("ium", "We are constantly adding more and more commands to make this bot much better.");
 
-    message.channel.send(serverEmbed);
+    return message.channel.send(serverEmbed);
 }
