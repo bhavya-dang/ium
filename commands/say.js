@@ -6,6 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
 }
 
-module.export.config = {
+/** module.export.config = {
     //name: ["say", "talk", "repeat"]
 }
+*/
