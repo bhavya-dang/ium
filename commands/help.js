@@ -11,5 +11,3 @@ exports.run = async (bot, message, args) => {
 
     return message.channel.send(serverEmbed);
 }
-
-//ewew

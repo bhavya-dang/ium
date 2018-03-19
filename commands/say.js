@@ -5,3 +5,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(sayMessage);
 
 }
+
+module.export.config = {
+    //name: ["say", "talk", "repeat"]
+}
