@@ -25,8 +25,15 @@ bot.on("ready", () => {
 
 bot.on('ready', () => {
 	console.log(`${bot.user.tag} running on ${bot.guilds.size} guilds with ${bot.users.size} users.`);
-	
 });
+
+bot.on('warn', console.warn);
+
+bot.on('error', console.error);
+
+bot.on('disconnect', () => console.log('Disconnecting...'));
+
+bot.on('reconnecting', () => console.log('Reconnecting...'));
 
 bot.on("message", message => {
 	if (message.author.bot) return;

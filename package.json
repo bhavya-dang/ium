@@ -21,6 +21,7 @@
     "superagent": "^3.8.2",
     "weather": "^0.1.0",
     "weather-js": "^2.0.0",
-    "weather.js": "^0.1.0"
+    "weather.js": "^0.1.0",
+    "ytdl-core": "^0.20.2"
   }
 }
