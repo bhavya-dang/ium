@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const ytdl = require('ytdl-core');
 
 exports.run = async (bot, message, args) => {
+    const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
+
     const voiceChannel = message.member.voiceChannel;
 		if (!voiceChannel) return message.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
 		
