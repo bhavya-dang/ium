@@ -82,4 +82,4 @@ setInterval(() => {
 }, 280000);
 */
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(botconfig.token);
