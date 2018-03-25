@@ -40,17 +40,6 @@ bot.on("message", message => {
 	if (message.author.bot) return;
 	if(message.content.indexOf(botconfig.prefix) !== 0) return;
 
-	
-	//Prefix
-	let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if(!prefixes[message.guild.id]){
-    prefixes[message.guild.id] = {
-      prefixes: botconfig.prefix
-    };
-  }
-
-	let prefix = prefixes[message.guild.id].prefixes;
-
 
   //Prefix + Command
 	let args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);

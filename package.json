@@ -13,6 +13,7 @@
     "discord.js-music": "^2.1.0",
     "ffmpeg-binaries": "^3.2.2-3",
     "fortnite": "^3.0.0",
+    "fs": "0.0.1-security",
     "isgd": "^1.1.3",
     "ms": "^2.1.1",
     "opusscript": "0.0.6",
