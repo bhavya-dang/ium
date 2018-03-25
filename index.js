@@ -39,10 +39,25 @@ bot.on('reconnecting', () => console.log('Reconnecting...'));
 bot.on("message", message => {
 	if (message.author.bot) return;
 	if(message.content.indexOf(botconfig.prefix) !== 0) return;
-  
-	const args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
-	const command = args.shift().toLowerCase();
-	
+
+	//Prefix
+	let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
+
+	if(!prefixes[message.guild.id]){
+		prefixes[message.guild.id] = {
+			prefixes: botconfig.prefix
+		};
+	}
+
+	let prefix = prefixes[message.guild.id].prefixes;
+
+
+  //Prefix + Command
+	let args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
+	let command = args.shift().toLowerCase();
+
+
+	//CurrencyWW
 	//if(!iumicDollar[message.author.id]){
 	//	iumicDollar[message.author.id] = {
 		//	iumicDollar: 0
@@ -58,6 +73,8 @@ bot.on("message", message => {
 		//}
 	//}
 
+
+	//Commands
 	try {
 	  let commandFile = require(`./commands/${command}.js`);
 	  commandFile.run(bot, message, args);
@@ -65,23 +82,5 @@ bot.on("message", message => {
 	  console.error(err);
 	}
 });
-
-
-/**
-//Glitch.com stuff
-const http = require('http');
-const express = require('express');
-const app = express();
-
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping Received");
-  response.sendStatus(200);
-});
-
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
-*/
 
 bot.login(botconfig.token);
