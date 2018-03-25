@@ -3,7 +3,8 @@ const snekfetch = require('snekfetch');
 
 exports.run = async (bot, message, args) => {
 
-    const { body } = await snekfetch.get('https://aws.random.cat/meow');
+    let {body} = await snekfetch
+    .get('https://aws.random.cat/meow.json');
 
     let catEmbed = new Discord.RichEmbed()
     .setColor("#bd9a82")
