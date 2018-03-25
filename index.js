@@ -2,6 +2,7 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
+const ytdl = require('ytdl-core');
 //let iumicDollar = require("/.money.json");
 
 const newUsers = new Discord.Collection();
@@ -64,6 +65,7 @@ bot.on("message", message => {
 	  console.error(err);
 	}
 });
+
 
 /**
 //Glitch.com stuff

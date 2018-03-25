@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 exports.run = async (bot, message, args) => {
     let botAvatar = bot.user.displayAvatarURL;
     var text_channels = 0, voice_channels = 0;
-    Client.channels.array().forEach(channel => {
+    bot.channels.array().forEach(channel => {
       if (channel.type == 'text') {
         text_channels += 1;
       } else if (channel.type == 'voice') {
@@ -20,9 +20,9 @@ exports.run = async (bot, message, args) => {
     .addField("Current Version", "v0.0.2")
     .addField("Born On", bot.user.createdAt)
     .addField("Servers", `${bot.guilds.size} servers.`)
-    .addField('Users', + bot.users.size + ' members', true)
     .addField("Text channels", text_channels, true)
     .addField("Voice Channels", voice_channels, true)
+    .addField('Users', + bot.users.size + ' members', true)
     .addField("Made with:", "discord.js")
     .addField("Made by", "<@275831434772742144>")
     .addField("Github", "https://github.com/tetra-dev/ium")
