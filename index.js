@@ -55,7 +55,7 @@ bot.on("message", message => {
 		let cooldownEmbed = new Discord.RichEmbed()
 		.setAuthor(message.author.username)
 		.setColor("#FFFFFF")
-		.addField("Cooldown! 🙃", `You must wait **2** seconds between commands!`)
+		.addField("Cooldown! 🙃", `You must wait **2** seconds between commands.`)
 		return message.channel.send(cooldownEmbed).then(message => {message.delete(5000)});
 	}
 	if(!message.member.hasPermission("ADMINISTRATOR")){
