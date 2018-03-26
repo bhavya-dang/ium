@@ -49,13 +49,14 @@ bot.on("message", message => {
 
 
 	//CoolDown
-	if(!message.content.startsWith(pregix)) return;
+	if(!message.content.startsWith(prefix)) return;
 	if(coolDown.has(message.author.id)){
 		message.delete();
 		let cooldownEmbed = new Discord.RichEmbed()
+		.setAuthor(message.author.username)
 		.setColor("#FFFFFF")
-		.addField(`You must wait **2** seconds between commands.`)
-		return message.channel.send(cooldownEmbed);
+		.addField("Cooldown! 🙃", `You must wait **2** seconds between commands!`)
+		return message.channel.send(cooldownEmbed).then(message => {message.delete(8000)});
 	}
 	if(!message.member.hasPermission("ADMINISTRATOR")){
 		coolDown.add(message.author.id);
