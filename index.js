@@ -56,7 +56,7 @@ bot.on("message", message => {
 		.setAuthor(message.author.username)
 		.setColor("#FFFFFF")
 		.addField("Cooldown! 🙃", `You must wait **2** seconds between commands!`)
-		return message.channel.send(cooldownEmbed).then(message => {message.delete(8000)});
+		return message.channel.send(cooldownEmbed).then(message => {message.delete(5000)});
 	}
 	if(!message.member.hasPermission("ADMINISTRATOR")){
 		coolDown.add(message.author.id);
