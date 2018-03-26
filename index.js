@@ -50,8 +50,15 @@ bot.on("message", message => {
 
 	//CoolDown
 	if(!message.content.startsWith(pregix)) return;
+	if(coolDown.has(message.author.id)){
+		message.delete();
+		let cooldownEmbed = new Discord.RichEmbed()
+		.setColor("#FFFFFF")
+		.addField(`You must wait **2** seconds between commands.`)
+		return message.channel.send(cooldownEmbed);
+	}
 	if(!message.member.hasPermission("ADMINISTRATOR")){
-		coolDown.add(message.author.id)
+		coolDown.add(message.author.id);
 	}
 
 
@@ -80,8 +87,6 @@ bot.on("message", message => {
 	message.channel.send(moneyEmbed).then(message => {message.delete(8000)});
 	}
 
-
-
 	//Commands
 	try {
 	  let commandFile = require(`./commands/${command}.js`);
@@ -89,6 +94,10 @@ bot.on("message", message => {
 	} catch (err) {
 	  console.error(err);
 	}
+
+	setTimeout(() => {
+		coolDown.delete(message.author.id)
+	}, coolSeconds * 1000)
 });
 
 bot.login(botconfig.token);
