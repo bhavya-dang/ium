@@ -4,6 +4,8 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const ytdl = require('ytdl-core');
 let iumics = require("./money.json");
+let coolDown = new Set();
+let coolSeconds = 2;
 
 const newUsers = new Discord.Collection();
 bot.commands = new Discord.Collection();
@@ -46,6 +48,13 @@ bot.on("message", message => {
 	let command = args.shift().toLowerCase();
 
 
+	//CoolDown
+	if(!message.content.startsWith(pregix)) return;
+	if(!message.member.hasPermission("ADMINISTRATOR")){
+		coolDown.add(message.author.id)
+	}
+
+
 	//Currency
 	if(!iumics[message.author.id]){
 		iumics[message.author.id] = {
@@ -68,8 +77,9 @@ bot.on("message", message => {
 	.setColor("#FFFFFF")
 	.addField("💰", `**${iumicAmt}** iumics added!`)
 	
-	message.channel.send(moneyEmbed).then(message => {message.delete(5000)});
+	message.channel.send(moneyEmbed).then(message => {message.delete(8000)});
 	}
+
 
 
 	//Commands
