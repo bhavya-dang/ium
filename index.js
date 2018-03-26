@@ -53,9 +53,8 @@ bot.on("message", message => {
 		}
 	}
 
-	let iumicAmt = Math.floor(Math.random() * 100) + 1;
-	let baseAmt = Math.floor(Math.random() * 100) + 1;
-	console.log(`${iumicAmt} ; ${baseAmt}`)
+	let iumicAmt = Math.floor(Math.random() * 15) + 1;
+	let baseAmt = Math.floor(Math.random() * 15) + 1;
 
 	if(iumicAmt === baseAmt){
 		iumics[message.author.id] = {
