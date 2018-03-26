@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const ytdl = require('ytdl-core');
-//let iumicDollar = require("/.money.json");
+let iumics = require("./money.json");
 
 const newUsers = new Discord.Collection();
 bot.commands = new Discord.Collection();
@@ -46,21 +46,31 @@ bot.on("message", message => {
 	let command = args.shift().toLowerCase();
 
 
-	//CurrencyWW
-	//if(!iumicDollar[message.author.id]){
-	//	iumicDollar[message.author.id] = {
-		//	iumicDollar: 0
-	//	};
-//	}
+	//Currency
+	if(!iumics[message.author.id]){
+		iumics[message.author.id] = {
+			iumics: 0
+		}
+	}
 
-	let iumicAmt = Math.floor(Math.random() * 15) + 1;
-	let baseAmt = Math.floor(Math.random() * 15) + 1;
+	let iumicAmt = Math.floor(Math.random() * 100) + 1;
+	let baseAmt = Math.floor(Math.random() * 100) + 1;
+	console.log(`${iumicAmt} ; ${baseAmt}`)
 
-	//if(iumicAmt === baseAmt){
-		//iumicAmt[message.author.id] = {
-			//coin
-		//}
-	//}
+	if(iumicAmt === baseAmt){
+		iumics[message.author.id] = {
+			iumics: iumics[message.author.id].iumics + iumicAmt
+		}
+	fs.writeFile("./money.json", JSON.stringify(iumics), (err) => {
+		if(err) console.log(err)
+	});
+	let moneyEmbed = new Discord.RichEmbed()
+	.setAuthor(message.author.username)
+	.setColor("#FFFFFF")
+	.addField("💰", `**${iumicAmt}** iumics added!`)
+	
+	message.channel.send(moneyEmbed).then(message => {message.delete(5000)});
+	}
 
 
 	//Commands
