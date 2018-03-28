@@ -2,7 +2,7 @@
 
 #json files
 botconfig.json
-package-lock
+package-lock.json
 money.json
 
 #stuff...
