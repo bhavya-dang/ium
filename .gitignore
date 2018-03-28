@@ -1,2 +1,10 @@
-node_modules
+#.gitignore files
+
+#json files
 botconfig.json
+package-lock
+money.json
+
+#stuff...
+node_modules
+.vs
