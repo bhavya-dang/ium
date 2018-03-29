@@ -29,7 +29,7 @@ exports.run = (bot, message, args, tools) => {
         embedColor: args[2] || 0xffffff
     }
 
-    const embed = new Discord.RichEmbed()
+    const announceEmbed = new Discord.RichEmbed()
         .setColor(options.embedColor)
         .setTitle(options.title)
 

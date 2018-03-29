@@ -9,6 +9,7 @@
   "author": "Tetra",
   "license": "ISC",
   "dependencies": {
+    "array-sort": "^1.0.0",
     "discord.js": "^11.3.2",
     "discord.js-music": "^2.1.0",
     "ffmpeg-binaries": "^3.2.2-3",
@@ -22,6 +23,7 @@
     "snekfetch": "^3.6.4",
     "strict-uri-encode": "^2.0.0",
     "superagent": "^3.8.2",
+    "table": "^4.0.3",
     "weather": "^0.1.0",
     "weather-js": "^2.0.0",
     "weather.js": "^0.1.0",
