@@ -1,41 +1,47 @@
 const Discord = require("discord.js");
-const config = require("../botconfig.json")
-const apikey = require("fortnite")
+const config = require("../botconfig.json");
 const Fortnite = require("fortnite");
-const ft = new Fortnite(apikey.fortnite);
+const ft = new Fortnite(config.fortnite);
 
-exports.run = async (bot, message, args) => {
-    
-    let username = args[0];
-    let platform = args[1] || "pc";
+ 
+exports.run = (bot, message, args, tools) => {
+ 
+  let platform;
+  let username;
+ 
+  if (!['pc','xbl','psn'].includes(args[0])) return message.channel.send('**Please Include the platform: `ium fortnite [ pc | xbl | psn ] <username>`**');
 
-    let datat = ft.getInfo(username, platform).then(data => {
+  if (!args[1]) return message.channel.send('**Please Include the username: `ium fortnite [ pc | xbl | psn ] <username>`**');
+ 
+  // Assign fts
+  platform = args.shift();
+  username = args.join(' '); 
+ 
+  // Fetch Data
+  ft.getInfo(username, platform).then( data => { 
+   
+    const embed = new Discord.RichEmbed() 
+      .setColor("#7221a1") 
+      .setTitle(`Stats for ${data.username}`) 
+      .setDescription(`**Top Placement**\n\n**Top 3s:** *${data.lifetimeft[0].ft}*\n**Top 5s:** *${data.lifetimeft[1].ft}*\n**Top 6s:** *${data.lifetimeft[3].ft}*\n**Top 12s:** *${data.lifetimeft[4].ft}*\n**Top 25s:** *${data.lifetimeft[5].ft}*`, true) // We can have other information look different, in fields or in the description.
+      .setThumbnail('https://vignette.wikia.nocookie.net/fortnite/images/d/d8/Icon_Founders_Badge.png') // Fortnite Logo
+      .addField('Total Score', data.lifetimeft[6].ft, true)
+      .addField('Matches Played', data.lifetimeft[7].ft, true)
+      .addField('Wins', data.lifetimeft[8].ft, true)
+      .addField('Win Percentage', data.lifetimeft[9].ft, true)
+      .addField('Kills', data.lifetimeft[10].ft, true)
+      .addField('K/D Ratio', data.lifetimeft[11].ft, true)
+      .addField('Kills Per Minute', data.lifetimeft[12].ft, true)
+      .addField('Time Played', data.lifetimeft[13].ft, true)
+      .addField('Average Survival Time', data.lifetimeft[14].ft, true)
 
-        let stats = data.lifetimestats;
-        let kills = stats.find(s => s.stat == 'kills');
-        let wins = stats.find(s => s.stat == 'wins');
-        let kd = stats.find(s => s.stat == 'kd');
-        let matchesPlayed = stats.find(s => s.stat == 'matchesPlayed');
-        let timePlayed = stats.find(s => s.stat == 'timePlayed');
-        let averageSurvivalTime = stats.find(s => s.stat == 'avgSurvivalTime');
-
-        let fortniteEmbed = new Discord.RichEmbed()
-            .setTitle("Fortnite Stats")
-            .setThumbnail("https://pbs.twimg.com/profile_images/966692874682118144/_9keP5sd.jpg")
-            .setAuthor(data.username)
-            .setColor("7221a1")
-            .addField("Kills", kills.value, true)
-            .addField("Winds", winds.value, true)
-            .addField("kdr", kd.value, true)
-            .addField("Kills", matchesPlayed.value, true)
-            .addField("Kills", timePlayed.value, true)
-            .addField("Kills", averageSurvivalTime.value, true)
-
-            message.channel.send(fortniteEmbed);
-
-
-    }).catch(e => {
-        console.log(e);
-        message.channel.send("**Couldn't fid that username in the database.**")
-    });
+    message.channel.send(embed)
+   
+  })
+  .catch(error => {
+   
+    message.channel.send('Username not found!');
+ 
+  })
+ 
 }

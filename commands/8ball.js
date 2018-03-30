@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
 
    //!8ball question
-   if(!args[1]) return message.reply("**Type a question with two or mords!** ium Am I a furry?");
+   if(!args[1]) return message.reply("**Type a question with two or mords!** ium 8ball Am I a furry?");
    let replies = ["Yes", "No", "I don't know", "Ask again later!", "Nope", "I am not sure!", "You tell me"];
 
    let result = Math.floor((Math.random() * replies.length));
