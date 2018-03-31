@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const ytdl = require('ytdl-core');
+let version = botconfig.version;
 let iumics = require("./money.json");
 let coolDown = new Set();
 let coolSeconds = 2;
@@ -23,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", () => {
 	console.log(`${bot.user.username} is online`);
-	bot.user.setActivity("ium help | v0.0.2");
+	bot.user.setActivity("ium help | ", botconfig.version);
 });
 
 bot.on('ready', () => {

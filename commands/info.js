@@ -1,4 +1,7 @@
 const Discord = require("discord.js");
+const botconfig = require("../botconfig.json");
+let version = botconfig.version;
+
 
 exports.run = async (bot, message, args) => {
     let botAvatar = bot.user.displayAvatarURL;
@@ -17,7 +20,7 @@ exports.run = async (bot, message, args) => {
     .setColor('#000000')
     .setThumbnail(botAvatar)
     .addField("Name", bot.user.username)
-    .addField("Current Version", "v0.0.2")
+    .addField("Current Version", botconfig.version)
     .addField("Born On", bot.user.createdAt)
     .addField('Users', + bot.users.size + ' members', true)
     .addField("Servers", `${bot.guilds.size} servers.`)
