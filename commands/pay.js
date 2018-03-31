@@ -27,6 +27,8 @@ if(isNaN(args[1])) return message.channel.send("Supply a number!");
 
   if(sIumics < args[1]) return message.reply("You do not have enough iumicics!");
 
+  if (parseInt(args[1]) <= 0) return message.reply("You must give a number that is higher than 0.");
+
   iumics[message.author.id] = {
     iumics: sIumics - parseInt(args[1])
   };

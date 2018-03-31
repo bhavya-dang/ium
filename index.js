@@ -49,7 +49,7 @@ bot.on("message", message => {
 	let args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
 	let command = args.shift().toLowerCase();
 
-	
+
 	//Level and XP Stuff
 	let xpAdd = Math.floor(Math.random() * 7) + 8;
 	//console.log(xpAdd);
@@ -72,7 +72,7 @@ bot.on("message", message => {
 	  .setColor("#FFFFFF")
 	  .addField("New Level", curlvl + 1);
   
-	  message.channel.send(lvlup);
+	  //message.channel.send(lvlup);
 	}
 	fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
 	  if(err) console.log(err)

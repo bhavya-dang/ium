@@ -20,7 +20,7 @@ exports.run = async (bot, message, args) => {
   .setColor("#7f46b7")
   .addField("Level", curlvl, true)
   .addField("XP", curxp, true)
-  .setFooter(`${difference} XP till level up`, message.author.displayAvatarURL);
+  .setFooter(`${difference} XP to level up`, message.author.displayAvatarURL);
 
   message.channel.send(lvlEmbed);
 
