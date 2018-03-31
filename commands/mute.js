@@ -32,7 +32,7 @@ exports.run = async (bot, message, args) => {
       if(!mutetime) return message.reply("**Specify a time for the user to be muted.**");
     
       await(tomute.addRole(muterole.id));
-      message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
+      message.send.channel(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
     
       setTimeout(function(){
         tomute.removeRole(muterole.id);
