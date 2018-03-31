@@ -17,7 +17,7 @@ exports.run = (bot, message, args) => {
             .setDescription(`**${current.skytext}**`)
             .setThumbnail(current.imageUrl) 
             .setAuthor(`Weather for ${current.observationpoint}`) 
-            .setColor("#f5a3fa") 
+            .setColor(`RANDOM`) 
             .addField('Timezone', `UTC${location.timezone}`, true) 
             .addField('Degree Type', location.degreetype, true) 
             .addField('Temperature', `${current.temperature} Degrees`, true)
