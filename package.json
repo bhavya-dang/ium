@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tetra",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "array-sort": "^1.0.0",
     "cheerio": "^1.0.0-rc.2",

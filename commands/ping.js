@@ -2,5 +2,10 @@ const Discord = require("discord.js");
 const ms = require("ms");
 
 exports.run = async (bot, message, args) => {
-    message.channel.send(`Pong! \`${Date.now() - message.createdTimestamp} ms\``);
+    const pingEmbed = new Discord.RichEmbed()
+    .setColor('#ffffff')
+    .addField("🏓 Pong!", `${Date.now() - message.createdTimestamp} ms`)
+
+
+    message.channel.send(pingEmbed);
 }
