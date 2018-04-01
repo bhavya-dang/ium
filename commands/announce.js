@@ -3,6 +3,8 @@ const Discord = require('discord.js');
 
 exports.run = (bot, message, args, tools) => {
 
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You must have the permission **Manage Messages** to use this command.");
+
     let split = '|';
 
     if(!args[0]) { 
@@ -19,7 +21,6 @@ exports.run = (bot, message, args, tools) => {
 
     let option = {
         title: args[0] || 'Announcment',
-        message: args[1] || undefined,
         embedColor: args[2] || 0xffffff,
         icon: `https://cdn.discordapp.com/attachments/416294137118195742/430094358381854720/avatar.png`
     }
@@ -30,10 +31,13 @@ exports.run = (bot, message, args, tools) => {
 
     if(option.message) embed.setDescription(option.message);
 
+    message.delete();
+
     let announceEmbed = new Discord.RichEmbed()
     .setColor(`RANDOM`)
     .setTimestamp()
     .setTitle(option.title)
 
     message.channel.send(announceEmbed);
+    
 }
