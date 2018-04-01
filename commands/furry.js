@@ -56,7 +56,12 @@ exports.run = async (bot, message, args) => {
     .setTitle("Furry")
     .setImage("https://i.gyazo.com/ab67008a001389085fca9b791d24337b.png");
 
-    let furrys = [furry1, furry2, furry3, furry4, furry5, furry6, furry7, furry8, furry9, furry10, toastFurry]
+    let toastFurry2 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry")
+    .setImage("https://cdn.discordapp.com/attachments/414650165987639299/429799505819336707/image.png");
+
+    let furrys = [furry1, furry2, furry3, furry4, furry5, furry6, furry7, furry8, furry9, furry10, toastFurry, toastFurry2]
 
     let furryR = Math.floor((Math.random() * furrys.length));
 

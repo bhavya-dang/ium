@@ -42,15 +42,8 @@ bot.on('reconnecting', () => console.log('Reconnecting...'));
 
 bot.on("message", message => {
 	if (message.author.bot) return;
-	if(message.content.indexOf(botconfig.prefix) !== 0) return;
 
-
-  	//Prefix + Command
-	let args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
-	let command = args.shift().toLowerCase();
-
-
-	//Level and XP Stuff
+	//XP and Level System
 	let xpAdd = Math.floor(Math.random() * 7) + 8;
 	//console.log(xpAdd);
 	
@@ -77,6 +70,13 @@ bot.on("message", message => {
 	fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
 	  if(err) console.log(err)
 	});
+
+	if(message.content.indexOf(botconfig.prefix) !== 0) return;
+
+
+  	//Prefix + Command
+	let args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
+	let command = args.shift().toLowerCase();
 
 
 	//CoolDown
