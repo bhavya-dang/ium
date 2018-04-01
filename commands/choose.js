@@ -3,22 +3,18 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
 
    //!8ball question
-   if(!args[1]) return message.reply("**Plesae enter a full question with 2 or more words.** ium Am I a furry?");
-   let replies = ["Yes", "No"];
+   if(!args[1]) return message.reply("**Enter two inputs for me to choose from.** ium choose Mom Dad");
+   let replies = [`${args[0]}`, `${args[1]}`];
 
    let result = Math.floor((Math.random() * replies.length));
-   let question = args.join(" ");
 
    let chooseEmbed = new Discord.RichEmbed()
 
-   .setAuthor(message.author.username)
    .setColor("#000000")
-   .addField("Question", question)
-   .addField("Answer", replies[result]);
+   .addField("I choose...", replies[result]);
 
    message.channel.send(chooseEmbed)
 
-   message.delete();
 
 
 }
