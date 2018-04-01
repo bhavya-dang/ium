@@ -1,17 +1,30 @@
 const Discord = require("discord.js");
 
 exports.run = async (bot, message, args) => {
-    let serverIcon = message.guild.iconURL;
-    let serverEmbed = new Discord.RichEmbed()
-    .setDescription("Server Information")
-    .setColor('#000000')
-    .setThumbnail(serverIcon)
-    .addField("Server Name", message.guild.name)
-    .addField("Owned By", message.guild.owner)
-    .addField("Created On", message.guild.createdAt)
-    .addField("You Joined", message.member.joinedAt)
-    .addField("Members", message.guild.memberCount)
-    .addField("Region", message.guild.region);
+    const verlvl = {
+        0: "None",
+        1: "Low",
+        2: "Medium",
+        3: "(╯°□°）╯︵ ┻━┻",
+        4: "(ノಠ益ಠ)ノ彡┻━┻"
+      }
     
-    message.channel.send(serverEmbed);
+        let inline = true
+        let sicon = message.guild.iconURL;
+        let serverembed = new Discord.RichEmbed()
+        
+        .setColor("#FFFFFF")
+        .setThumbnail(sicon)
+        .setAuthor(message.guild.name)
+        .addField("Users", `${message.guild.memberCount}`, inline)
+        .addField("Owner", message.guild.owner, inline)
+        .addField("Region", message.guild.region, inline)
+        .addField("Verification Level", verlvl[message.guild.verificationLevel],inline)
+        .addField("Roles", message.guild.roles.size, inline)
+        .addField("Channels", message.guild.channels.size, inline)
+        .addField(`Server Created`, `${message.guild.createdAt}`)
+        .addField("You Joined", message.member.joinedAt)
+        .setFooter(`ID - ${message.guild.id}`);
+    
+        message.channel.send(serverembed);
 }
