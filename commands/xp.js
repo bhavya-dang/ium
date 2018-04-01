@@ -12,7 +12,7 @@ exports.run = async (bot, message, args) => {
 }
   let curxp = xp[message.author.id].xp;
   let curlvl = xp[message.author.id].level;
-  let nxtLvlXp = curlvl * 200;
+  let nxtLvlXp = curlvl * 100;
   let difference = nxtLvlXp - curxp;
 
   let lvlEmbed = new Discord.RichEmbed()
@@ -20,7 +20,7 @@ exports.run = async (bot, message, args) => {
   .setColor("#7f46b7")
   .addField("Level", curlvl, true)
   .addField("XP", curxp, true)
-  .setFooter(`${difference} XP to level up`, message.author.displayAvatarURL);
+  .setFooter(`${difference} XP till level up 🎉`, message.author.displayAvatarURL);
 
   message.channel.send(lvlEmbed);
 

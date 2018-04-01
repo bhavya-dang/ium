@@ -5,10 +5,10 @@ module.exports.run = async (bot, message, args) => {
    //!8ball question
    if(!args[0]) return message.reply("**See how well two users love each other by mentioning at least one user.** Usage: ium bond <user>");
    
-   //let bondLevelResults = ["​█", "██", "███", "████", "█████", "██████", "███████", "████████", "█████████", "██████████"];
-   let bondLevelPercentage = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"];
+   let bondLevelResults = ["​🖤🖤🖤🖤🖤🖤🖤🖤🖤🖤", "​♥🖤🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥♥🖤🖤🖤🖤🖤🖤🖤", "♥♥♥♥🖤🖤🖤🖤🖤🖤", "♥♥♥♥♥🖤🖤🖤🖤🖤", "♥♥♥♥♥♥🖤🖤🖤🖤", "♥♥♥♥♥♥♥🖤🖤🖤", "♥♥♥♥♥♥♥♥🖤🖤", "♥♥♥♥♥♥♥♥♥🖤", "♥♥♥♥♥♥♥♥♥♥", "♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥"];
+   //let bondLevelPercentage = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"];
 
-   let bondLevel = Math.floor((Math.random() * bondLevelPercentage.length));
+   let bondLevel = Math.floor((Math.random() * bondLevelResults.length));
 
    /** 
  //I'm so bad at coding, and I couldnt think of any more effective way to do this so...
@@ -63,7 +63,7 @@ if (bondLevelResults == "10"){
    //.setAuthor(`${message.author} x ${bondPartner2}`)
    .setColor("#000000")
    .addField("Users:", `${message.author} x ${bondPartner1}`)
-   .addField("Bond Level", ` ${bondLevel}`);
+   .addField("Bond Level", bondLevelResults[bondLevel]);
 
    message.channel.send(bondEmbed)
 
