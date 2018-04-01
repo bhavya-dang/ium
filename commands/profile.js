@@ -17,6 +17,7 @@ exports.run = async (bot, message, args) => {
   let difference = nxtLvlXp - curxp;
   let userIumics = iumics[message.author.id].iumics;
 
+  const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
   let target = message.mentions.users.first() || message.author;
 
   let profileEmbed = new Discord.RichEmbed()

@@ -13,31 +13,17 @@ exports.run = async (bot, message, args, tools) => {
 
     }
 
-    //args = args.join(' ').split(split);
-
-    for (var i = 0; i < args.length; i++) args[i] = args[0].trim();
-
-    if(args[2]) args[2] = parseInt(`0x${args[2]}`);
-
-    let option = {
-        title: args[0] || 'Poll',
-        embedColor: args[2] || 0xffffff,
-        icon: `https://cdn.discordapp.com/attachments/416294137118195742/430094358381854720/avatar.png`
-    }
-
-    const embed = new Discord.RichEmbed()
-        .setColor(option.embedColor)
-        .setTitle(option.title)
-
-    if(option.message) embed.setDescription(option.message);
+    let poll = args.join(" ");
+    
     message.delete();
+
     let announceEmbed = new Discord.RichEmbed()
     .setColor(`RANDOM`)
     .setTimestamp()
-    .setTitle(option.title)
+    .setTitle(poll)
 
-    message.channel.send(announceEmbed);
-    await message.react(`✅`);
-    await message.react(`❌`);
+    let m = await message.channel.send(announceEmbed);
+    await m.react(`✅`);
+    await m.react(`❌`);
     
 }
