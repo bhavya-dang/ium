@@ -4,12 +4,12 @@ const snekfetch = require('snekfetch');
 exports.run = async (bot, message, args) => {
 
     let {body} = await snekfetch
-    .get('https://aws.random.cat/meow.json');
+    .get('http://edgecats.net/random');
 
     let catEmbed = new Discord.RichEmbed()
     .setColor("#bd9a82")
     .setTitle("Cat :cat:")
-    .setImage(body.file);
+    .setImage(body.url);
 
     message.channel.send(catEmbed);
 }

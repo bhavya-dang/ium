@@ -131,8 +131,75 @@ exports.run = async (bot, message, args) => {
     .setTitle("Furry 🦊")
     .setImage("http://mediad.publicbroadcasting.net/p/vpr/files/styles/x_large/public/201603/vermont-furs-courtesy-andrew-corvin.jpg");
 
+    let furry22 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://cdn.discordapp.com/attachments/414650165987639299/430180005553766410/image.jpg");
 
-    let furrys = [furry1, furry2, furry3, furry4, furry5, furry6, furry7, furry8, furry9, furry10, toastFurry, toastFurry2, toastFurry3, toastFurry4, toastFurry5, furry11, furry12, furry13, furry14, furry15, furry16, furry17, furry18, furry19, furry20, furry21]
+    let furry23 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://cdn.discordapp.com/attachments/414650165987639299/430179452442640384/magik.png");
+
+    let furry24 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("http://mediad.publicbroadcasting.net/p/vpr/files/styles/x_large/public/201603/vermont-furs-courtesy-andrew-corvin.jpg");
+
+    let furry25 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://cdn.discordapp.com/attachments/414650165987639299/430180005553766410/image.jpgg");
+
+    let furry26 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://cdn.discordapp.com/attachments/414650165987639299/430179452442640384/magik.png");
+
+    let furry27 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("http://en.wikifur.com/w/images/thumb/5/5b/Artie_FA_scribbleshoot_with_collar.jpg/800px-Artie_FA_scribbleshoot_with_collar.jpg");
+
+    let furry28 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://i.pinimg.com/736x/77/5b/04/775b0484c507467689aacf8bd85ad6cc--fursuit-furry-art.jpg");
+
+    let furry29 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://orig00.deviantart.net/ef81/f/2011/064/6/d/my_new_fursuit_by_2078-d3axzrm.jpg");
+
+    let furry30 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://media.giphy.com/media/pceX16v1Pq8g/giphy.gif");
+
+    let furry31 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://img00.deviantart.net/83d4/i/2016/332/3/c/all_starts_furry_drawings_of_this_year_by_ndres_007-dapwx1n.jpg");
+
+    let furry32 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv6Xio8xixX4zgpjaRUxCBHDwX4Egh6lQ9a1QXBz5Ojn7M3zj3");
+
+    let furry33 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://media.tenor.com/images/887c10c0f359abe2c1f4d594b4d068f2/tenor.gif");
+
+    let furry34 = new Discord.RichEmbed()
+    .setColor("#f953ff")
+    .setTitle("Furry 🦊")
+    .setImage("https://i.kinja-img.com/gawker-media/image/upload/t_original/pdfxjeupyp8g86lg5qrt.png");
+
+
+
+
+    let furrys = [furry1, furry2, furry3, furry4, furry5, furry6, furry7, furry8, furry9, furry10, toastFurry, toastFurry2, toastFurry3, toastFurry4, toastFurry5, furry11, furry12, furry13, furry14, furry15, furry16, furry17, furry18, furry19, furry20, furry21, furry22, furry23, furry24, furry25, furry26, furry27, furry28, furry29, furry30, furry31, furry31, furry32, furry33, furry34]
 
     let furryR = Math.floor((Math.random() * furrys.length));
 
