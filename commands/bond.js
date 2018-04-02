@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
 
    //!8ball question
-   if(!args[0]) return message.reply("**See how well two users love each other by mentioning at least one user.** Usage: ium bond <user>");
+   if(!args[0]) return message.channel.send("**See how well two users love each other by mentioning at least one user.** Usage: ium bond <user>");
    
    let bondLevelResults = ["​🖤🖤🖤🖤🖤🖤🖤🖤🖤🖤", "​♥🖤🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥♥🖤🖤🖤🖤🖤🖤🖤", "♥♥♥♥🖤🖤🖤🖤🖤🖤", "♥♥♥♥♥🖤🖤🖤🖤🖤", "♥♥♥♥♥♥🖤🖤🖤🖤", "♥♥♥♥♥♥♥🖤🖤🖤", "♥♥♥♥♥♥♥♥🖤🖤", "♥♥♥♥♥♥♥♥♥🖤", "♥♥♥♥♥♥♥♥♥♥", "♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥"];
    //let bondLevelPercentage = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"];

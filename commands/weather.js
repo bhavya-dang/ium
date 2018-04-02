@@ -24,6 +24,8 @@ exports.run = (bot, message, args) => {
             .addField('Feels Like', `${current.feelslike} Degrees`, true)
             .addField('Winds', current.winddisplay, true)
             .addField('Humidity', `${current.humidity}%`, true)
+            .addField("Day", `${current.day}`, true)
+            .addField("Date", `${current.date}`, true);
         message.channel.send(embed)
     })
  } 

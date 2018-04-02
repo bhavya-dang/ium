@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 module.exports.run = async (bot, message, args) => {
 
    //!8ball question
-   if(!args[0]) return message.reply("**Ask me to rate someone** ium rate <someone>");
+   if(!args[0]) return message.channel.send("**Ask me to rate someone** ium rate <someone>");
    let ratings = ["0", "⭐ - 1", "⭐⭐ - 2", "⭐⭐⭐ - 3", "⭐⭐⭐⭐- 4", "⭐⭐⭐⭐⭐ - 5", "⭐⭐⭐⭐⭐⭐ - 6", , "⭐⭐⭐⭐⭐⭐ - 7", , "⭐⭐⭐⭐⭐⭐⭐⭐ - 8", , "⭐⭐⭐⭐⭐⭐⭐⭐⭐ - 9", , "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ - 10", , "⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ - 1000"];
 
    let result = Math.floor((Math.random() * ratings.length));
