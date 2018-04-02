@@ -2,7 +2,6 @@ const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
 
-   //!8ball question
    if(!args[1]) return message.reply("**Enter two inputs for me to choose from.** ium choose Mom Dad");
    let replies = [`${args[0]}`, `${args[1]}`];
 
