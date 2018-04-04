@@ -15,7 +15,7 @@ exports.run = async (bot, message, args, tools) => {
 
     let poll = args.join(" ");
     
-    message.delete();
+    //message.delete();
 
     let announceEmbed = new Discord.RichEmbed()
     .setColor(`RANDOM`)

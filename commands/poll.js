@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 exports.run = async (bot, message, args, tools) => {
 
-    //if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You must have the permission **Manage Messages** to use this command.");
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You must have the permission **Manage Messages** to use this command. If you don't have that permission, and want to use this command, use: `ium vote <your text here>`");
 
     //let split = '|';
 

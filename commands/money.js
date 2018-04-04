@@ -4,6 +4,7 @@ const Discord = require("discord.js");
 let iumics = require("../money.json");
 
 exports.run = async (bot, message, args) => {
+    const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
     let user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
 
     if(!user){
@@ -36,7 +37,7 @@ exports.run = async (bot, message, args) => {
     let userIumics = iumics[user.id].iumics;
 
     let moneyEmbed2 = new Discord.RichEmbed()
-    .setAuthor(message.author.username)
+    .setAuthor(member.user.username)
     .setColor("FFFFFF")
     .addField("💰Total iumics", `**${user}** has a total of **${userIumics}** iumics`);
     
