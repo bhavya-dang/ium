@@ -51,7 +51,7 @@ if(!xp[user.id]){
  .setColor("#7f46b7")
  .addField("Level", ucurlvl, true)
  .addField("XP", ucurxp, true)
- .setFooter(`${udifference} XP till level up 🎉`, target.displayAvatarURL);
+ .setFooter(`${udifference} XP till level up`, target.displayAvatarURL);
 
  return message.channel.send(ulvlEmbed);
 
