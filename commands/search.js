@@ -13,3 +13,7 @@ exports.run = (client, message, args, tools) => {
  message.channel.send(`**<${link}>**`); // Enclosing in ** makes it bold, enclosing in <> hides the embed that comes from the link.
 
 } // Let's test it!
+
+module.exports.help = {
+    name: "search"
+  }

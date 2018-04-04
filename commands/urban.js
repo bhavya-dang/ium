@@ -15,3 +15,7 @@ exports.run = async (bot, message, args, tools) => {
 
     message.channel.send(urbanEmbed);
 }
+
+module.exports.help = {
+    name: "urban"
+  }

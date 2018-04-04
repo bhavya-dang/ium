@@ -10,3 +10,7 @@ module.exports.run = async (bot, message, args) => {
     message.guild.unban(user);
 
 }
+
+module.exports.help = {
+    name: "unban"
+  }

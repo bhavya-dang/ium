@@ -20,3 +20,7 @@ exports.run = async (bot, message, args) => {
 
     return message.channel.send(kickEmbed);
 }
+
+module.exports.help = {
+    name: "kick"
+  }

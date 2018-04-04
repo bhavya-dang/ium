@@ -27,3 +27,7 @@ exports.run = async (bot, message, args, tools) => {
     await m.react(`❌`);
     
 }
+
+module.exports.help = {
+    name: "poll"
+  }

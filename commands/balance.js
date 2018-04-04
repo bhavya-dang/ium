@@ -18,3 +18,8 @@ exports.run = async (bot, message, args) => {
     message.channel.send(moneyEmbed);
 
 }
+
+
+module.exports.help = {
+    name: "balance"
+}

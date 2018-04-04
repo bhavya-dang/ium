@@ -39,3 +39,7 @@ exports.run = (client, message, args) => { // We're going to have to require the
  
  
 };
+
+module.exports.help = {
+  name: "spotify"
+}

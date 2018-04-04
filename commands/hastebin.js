@@ -17,3 +17,8 @@ exports.run = (bot, message, args) => {
         message.delete();
 
 }        
+
+
+module.exports.help = {
+    name: "hastebin"
+  }

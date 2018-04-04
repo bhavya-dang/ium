@@ -6,3 +6,8 @@ exports.run = async (bot, message, args) => {
 //message.guild.createChannel('furry-database', 'ium')
 
 }
+
+
+module.exports.help = {
+    name: "create"
+}

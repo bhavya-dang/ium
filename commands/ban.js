@@ -29,3 +29,8 @@ if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("*
     message.channel.send(Banembed);
 
 }
+
+
+module.exports.help = {
+  name: "ban"
+}

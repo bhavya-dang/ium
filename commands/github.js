@@ -7,3 +7,7 @@ exports.run = async (bot, message, args) => {
 
     return message.channel.send(githubEmbed);
 }
+
+module.exports.help = {
+    name: "github"
+  }

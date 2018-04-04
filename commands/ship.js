@@ -5,3 +5,7 @@ exports.run = async (bot, message, args) => {
     //In development
 
 }
+
+module.exports.help = {
+    name: "ship"
+  }

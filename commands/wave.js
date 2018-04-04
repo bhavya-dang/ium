@@ -8,3 +8,7 @@ exports.run = async (bot, message, args) => {
     waveMessage.edit(`o/`);
     message.channel.send(waveMessage);
  }
+
+ module.exports.help = {
+    name: "wave"
+  }

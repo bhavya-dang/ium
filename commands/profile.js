@@ -32,3 +32,7 @@ exports.run = async (bot, message, args) => {
   message.channel.send(profileEmbed);
 
 }
+
+module.exports.help = {
+  name: "profile"
+}

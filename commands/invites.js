@@ -24,3 +24,7 @@ exports.run = async (bot, message, args, tools) => {
 
     message.channel.send(embed);
 }
+
+module.exports.help = {
+    name: "invites"
+  }

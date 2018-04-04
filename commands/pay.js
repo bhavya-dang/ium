@@ -44,3 +44,7 @@ if(isNaN(args[1])) return message.channel.send("Supply a number!");
   });
 
 }
+
+module.exports.help = {
+  name: "pay"
+}

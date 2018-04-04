@@ -8,8 +8,12 @@ exports.run = async (bot, message, args) => {
     .addField("Bot Info", "discord, invite, info, dev, version, ium, stats")
     .addField("Moderation", "ban, kick, mute, unmute, report")
     .addField("Fun", "dog, 8ball, choose, say, money, pay, mock, reverse, furry, bond, wave, rate")
-    .addField("scale, search, announce, weather, hastebin, translate")
+    .addField("Utils", "scale, search, announce, weather, hastebin, translate")
     .addField("ium", "We are constantly adding more and more commands to make this bot much better.");
 
     return message.channel.send(serverEmbed);
 }
+
+module.exports.help = {
+    name: "help"
+  }

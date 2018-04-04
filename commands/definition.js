@@ -1,7 +1,7 @@
 const urban = require('relevant-urban'), Discord = require('discord.js');
 
 exports.run = async (bot, message, args, tools) => {
-    if(!args[0]) return message.channel.send(`**Please specify some a word to defin.**`);
+    if(!args[0]) return message.channel.send(`**Please specify a word to define.**`);
 
     let res = await urban(args.join(' ')).catch(e => {
         return message.channel.send(`**Definition not found.**`);
@@ -15,3 +15,7 @@ exports.run = async (bot, message, args, tools) => {
 
     message.channel.send(urbanEmbed);
 }
+
+module.exports.help = {
+    name: "definition"
+  }

@@ -12,3 +12,7 @@ exports.run = async (bot, message, args) => {
     
     message.channel.send(verEmbed);
 }
+
+module.exports.help = {
+    name: "version"
+  }

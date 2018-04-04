@@ -13,3 +13,7 @@ exports.run = async (bot, message, args) => {
 
     message.channel.send(dogEmbed);
 }
+
+module.exports.help = {
+    name: "dog"
+  }

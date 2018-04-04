@@ -69,3 +69,8 @@ if (bondLevelResults == "10"){
 
 
 }
+
+
+module.exports.help = {
+    name: "bond"
+}

@@ -12,3 +12,8 @@ exports.run = async (bot, message, args) => {
     message.channel.send(mockEmbed);
 
 }
+
+
+module.exports.help = {
+    name: "mock"
+  }

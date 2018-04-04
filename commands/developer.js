@@ -7,3 +7,7 @@ exports.run = async (bot, message, args) => {
 
     message.channel.send(devEmbed);
 }
+
+module.exports.help = {
+    name: "developer"
+  }

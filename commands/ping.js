@@ -9,3 +9,7 @@ exports.run = async (bot, message, args) => {
 
     message.channel.send(pingEmbed);
 }
+
+module.exports.help = {
+    name: "ping"
+  }

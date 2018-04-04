@@ -10,3 +10,7 @@ exports.run = async (bot, message, args) => {
 
     message.channel.send(serverEmbed);
 }
+
+module.exports.help = {
+    name: "ium"
+  }

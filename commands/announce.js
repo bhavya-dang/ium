@@ -41,3 +41,8 @@ exports.run = (bot, message, args, tools) => {
     message.channel.send(announceEmbed);
     
 }
+
+
+module.exports.help = {
+    name: "announce"
+}
