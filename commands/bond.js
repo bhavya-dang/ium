@@ -1,69 +1,82 @@
 const Discord = require("discord.js")
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = (bot, message, args) => {
 
    //!8ball question
-   if(!args[0]) return message.channel.send("**See how well two users love each other by mentioning at least one user.** Usage: ium bond <user>");
+   if(!args[1]) return message.channel.send("**See how well two users love each other by mentioning at least one user.** Usage: ium bond <user>");
    
-   let bondLevelResults = ["​🖤🖤🖤🖤🖤🖤🖤🖤🖤🖤", "​♥🖤🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥♥🖤🖤🖤🖤🖤🖤🖤", "♥♥♥♥🖤🖤🖤🖤🖤🖤", "♥♥♥♥♥🖤🖤🖤🖤🖤", "♥♥♥♥♥♥🖤🖤🖤🖤", "♥♥♥♥♥♥♥🖤🖤🖤", "♥♥♥♥♥♥♥♥🖤🖤", "♥♥♥♥♥♥♥♥♥🖤", "♥♥♥♥♥♥♥♥♥♥", "♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥"];
-   //let bondLevelPercentage = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"];
+   //var bondLevelResults = ["​🖤🖤🖤🖤🖤🖤🖤🖤🖤🖤", "​♥🖤🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥♥🖤🖤🖤🖤🖤🖤🖤", "♥♥♥♥🖤🖤🖤🖤🖤🖤", "♥♥♥♥♥🖤🖤🖤🖤🖤", "♥♥♥♥♥♥🖤🖤🖤🖤", "♥♥♥♥♥♥♥🖤🖤🖤", "♥♥♥♥♥♥♥♥🖤🖤", "♥♥♥♥♥♥♥♥♥🖤", "♥♥♥♥♥♥♥♥♥♥", "♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥"];
 
-   let bondLevel = Math.floor((Math.random() * bondLevelResults.length));
+   //var bondLevel = Math.floor((Math.random() * bondLevelResults.length));
+   var bondLevel = Math.floor(Math.random() * 102);
 
-   /** 
- //I'm so bad at coding, and I couldnt think of any more effective way to do this so...
- if (bondLevelResults == "1"){
-    let bondLevelBox = ["​█"];
-    let bondLevelPercentage = ["10%"];
-}else
-if (bondLevelResults == "2"){
-    let bondLevelBox = ["██"]
-    let bondLevelPercentage = ["20%"];
-}else
-if (bondLevelResults == "3"){
-    let bondLevelBox = ["███"]
-    let bondLevelPercentage = ["30%"];
-}else
-if (bondLevelResults == "4"){
-    let bondLevelBox = ["████"]
-    let bondLevelPercentage = ["40%"];
-}else
-if (bondLevelResults == "5"){
-    let bondLevelBox = ["█████"]
-    let bondLevelPercentage = ["50%"];
-}else
-if (bondLevelResults == "6"){
-    let bondLevelBox = ["███████​"]
-    let bondLevelPercentage = ["60%"];
-}else
-if (bondLevelResults == "7"){
-    let bondLevelBox = ["████████​"]
-    let bondLevelPercentage = ["70%"];
-}else
-if (bondLevelResults == "8"){
-    let bondLevelBox = ["████████​█"]
-    let bondLevelPercentage = ["80%"];
-}else
-if (bondLevelResults == "9"){
-    let bondLevelBox = ["█████████"]
-    let bondLevelPercentage = ["90%"];
-} else
-if (bondLevelResults == "10"){
-    let bondLevelBox = ["██████████"]
-    let bondLevelPercentage = ["100%"];
-}
-*/
+    if (bondLevel > 100 ) {
+        var ship = 'Perfect Couple <3_<3 :ok_hand:'
+        var bondLevelResults = `♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥`
+    } else
+    if (bondLevel == 100) {
+        var ship = 'Lit Couple <3 :ok_hand:'
+        var bondLevelResults = `♥♥♥♥♥♥♥♥♥♥`
+    } else
+    if (bondLevel >= 90 && bondLevel < 100) {
+        var ship = 'Great Couple <3'
+        var bondLevelResults = `♥♥♥♥♥♥♥♥♥🖤`
+    } else
+    if (bondLevel >= 80 && bondLevel < 90) {
+        var ship = 'Great Couple <3'
+        var bondLevelResults = `♥♥♥♥♥♥♥♥🖤🖤`
+    } else
+    if (bondLevel >= 75 && bondLevel < 80) {
+        var ship = 'Great Couple <3'
+        var bondLevelResults = `♥♥♥♥♥♥♥🖤🖤🖤`
+    } else
+    if (bondLevel >= 70 && bondLevel < 75) {
+        var ship = 'A littly risky but can work out! '
+        var bondLevelResults = '♥♥♥♥♥♥♥🖤🖤🖤'
+    } else
+    if (bondLevel >= 60 && bondLevel < 70) {
+        var ship = 'Eh.'
+        var bondLevelResults = '♥♥♥♥♥♥🖤🖤🖤🖤'
+    } else
+    if (bondLevel >= 50 && bondLevel < 60) {
+        var ship = 'Eh. '
+        var bondLevelResults = `♥♥♥♥♥🖤🖤🖤🖤🖤`
+    } else
+    if (bondLevel >= 40 && bondLevel < 50) {
+        var ship = 'Eh. '
+        var bondLevelResults = `♥♥♥♥🖤🖤🖤🖤🖤🖤`
+    } else
+    if (bondLevel >= 30 && bondLevel < 40) {
+        var ship = 'Eh. '
+        var bondLevelResults = `♥♥♥🖤🖤🖤🖤🖤🖤🖤`
+    } else
+    if (bondLevel >= 25 && bondLevel < 30) {
+        var ship = 'No Comment'
+        var bondLevelResults = `♥♥🖤🖤🖤🖤🖤🖤🖤🖤`
+    } else
+    if (bondLevel >= 20 && bondLevel < 25) {
+        var ship = 'Rip'
+        var bondLevelResults = `♥♥🖤🖤🖤🖤🖤🖤🖤🖤`
+    } else
+    if (bondLevel >= 10 && bondLevel < 20) {
+        var ship = 'Rip'
+        var bondLevelResults = `​♥🖤🖤🖤🖤🖤🖤🖤🖤🖤`
+    } else
+    if (bondLevel >= 0 && bondLevel < 10) {
+        var ship = 'Not even possible...'
+        var bondLevelResults = `🖤🖤🖤🖤🖤🖤🖤🖤🖤🖤`
+    } 
+   
 
-
-   //Two Users
-   let bondPartner1 = message.mentions.users.first();
-
-   let bondEmbed = new Discord.RichEmbed()
+   var bondEmbed = new Discord.RichEmbed()
 
    //.setAuthor(`${message.author} x ${bondPartner2}`)
    .setColor("#000000")
-   .addField("Users:", `${message.author} x ${bondPartner1}`)
-   .addField("Bond Level", bondLevelResults[bondLevel]);
+   .addField("Users", `${args[0]} x ${args[1]}`)
+   .addField("Bond Score", `${bondLevel}%`)
+   .addField("Bond Bar", bondLevelResults)
+   .addField("Summary", ship);
+
 
    message.channel.send(bondEmbed)
 
