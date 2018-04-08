@@ -1,10 +1,10 @@
-//const Discord = require("discord.js");
-//const db = require (`quick.db`);
-//ms = require(`parse-ms`)
-//let iumics = require("../money.json");
+const Discord = require("discord.js");
+const db = require (`quick.db`);
+ms = require(`parse-ms`)
+let iumics = require("../money.json");
 
 exports.run = async (bot, message, args) => {
-/**
+
 
     let cooldown = 8.64e+7,
         amount = 100;
@@ -38,7 +38,6 @@ exports.run = async (bot, message, args) => {
     .addField("💰Total iumics", `You have a total of **${userIumics}** iumics`);
     
     message.channel.send(moneyEmbed);
-    */
 
 }
 

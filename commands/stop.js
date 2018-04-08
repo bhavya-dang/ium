@@ -1,20 +1,28 @@
 const Discord = require("discord.js");
-const ytdl = require('ytdl-core');
+const YTDL = require('ytdl-core');
+var servers = {};
 
 exports.run = async (bot, message, args) => {
-    const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
-    
-    const voiceChannel = message.member.voiceChannel;
-    if(!message.member.voiceChannel) return message.channel.send('Your are not in a voice channel!');
-    if(!serverQueue) {
-        return message.channel.send('There is nothing playing to stop.');
+
+    function play (connection, message) {
+        var server = servers[message.guild.id];
+
+        server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+
+        server.queue.shift();
+
+        server.dispatcher.on("end", function(){
+            if (server.queue[0]) play (connection, message);
+            else connection.disconnect();
+        });
     }
-    serverQueue.songs = [];
-    serverQueue.connection.dispatcher.end();
-    return;
+
+    var server = servers[message.guild.id];
+
+    if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
         
 }
 
 module.exports.help = {
     name: "stop"
-  }
+ }

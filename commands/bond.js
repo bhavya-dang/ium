@@ -1,14 +1,17 @@
 const Discord = require("discord.js")
 
-module.exports.run = (bot, message, args) => {
+exports.run = async (bot, message, args) => {
 
    //!8ball question
-   if(!args[1]) return message.channel.send("**See how well two users love each other by mentioning at least one user.** Usage: ium bond <user>");
+   //if(!args[0]) return message.channel.send("**See how well two users love each other by mentioning at least one user.** Usage: ium bond <user> <user>");
    
    //var bondLevelResults = ["​🖤🖤🖤🖤🖤🖤🖤🖤🖤🖤", "​♥🖤🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥♥🖤🖤🖤🖤🖤🖤🖤", "♥♥♥♥🖤🖤🖤🖤🖤🖤", "♥♥♥♥♥🖤🖤🖤🖤🖤", "♥♥♥♥♥♥🖤🖤🖤🖤", "♥♥♥♥♥♥♥🖤🖤🖤", "♥♥♥♥♥♥♥♥🖤🖤", "♥♥♥♥♥♥♥♥♥🖤", "♥♥♥♥♥♥♥♥♥♥", "♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥"];
 
    //var bondLevel = Math.floor((Math.random() * bondLevelResults.length));
    var bondLevel = Math.floor(Math.random() * 102);
+   let user1 = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+   let user2 = message.guild.member(message.guild.members.get(args[1]));
+   let user3 = message.guild.member(message.guild.members.get(args[2]));
 
     if (bondLevel > 100 ) {
         var ship = 'Perfect Couple <3_<3 :ok_hand:'
@@ -66,22 +69,52 @@ module.exports.run = (bot, message, args) => {
         var ship = 'Not even possible...'
         var bondLevelResults = `🖤🖤🖤🖤🖤🖤🖤🖤🖤🖤`
     } 
-   
-
-   var bondEmbed = new Discord.RichEmbed()
-
-   //.setAuthor(`${message.author} x ${bondPartner2}`)
-   .setColor("#000000")
-   .addField("Users", `${args[0]} x ${args[1]}`)
-   .addField("Bond Score", `${bondLevel}%`)
-   .addField("Bond Bar", bondLevelResults)
-   .addField("Summary", ship);
 
 
-   message.channel.send(bondEmbed)
+    if(!args[1]){
+        var bondEmbed = new Discord.RichEmbed()
+
+        .setColor("#f5a3fa")
+        .addField("Users", `${message.author} x ${args[0]}`)
+        .addField("Bond Score", `${bondLevel}%`)
+        .addField("Bond Bar", bondLevelResults)
+        .addField("Summary", ship);
+     
+     
+        return message.channel.send(bondEmbed)
+    }  
+    
+    if(!args[2]){
+        var bondEmbed2 = new Discord.RichEmbed()
+
+        .setColor("#f5a3fa")
+        .addField("Users", `${args[0]} x ${args[1]}`)
+        .addField("Bond Score", `${bondLevel}%`)
+        .addField("Bond Bar", bondLevelResults)
+        .addField("Summary", ship);
+     
+     
+        return message.channel.send(bondEmbed2)
+    }               
 
 
+    if(!args[3]) { 
+
+        var bondEmbed3 = new Discord.RichEmbed()
+
+        .setColor("#f5a3fa")
+        .addField("Users", `${args[0]} x ${args[1]} x ${args[2]}`)
+        .addField("Bond Score", `${bondLevel}%`)
+        .addField("Bond Bar", bondLevelResults)
+        .addField("Summary", ship);
+     
+     
+        return message.channel.send(bondEmbed)
+    }
+    
 }
+
+
 
 
 module.exports.help = {
