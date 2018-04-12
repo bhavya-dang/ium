@@ -1,5 +1,3 @@
-
-
 const Discord = require("discord.js");
 let iumics = require("../money.json");
 

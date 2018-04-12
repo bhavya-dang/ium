@@ -6,7 +6,7 @@ exports.run = async (bot, message, args) => {
     let botAvatar = bot.user.displayAvatarURL;
     let botEmbed = new Discord.RichEmbed()
     .setColor('#000000')
-    .setDescription("Invite ium: https://ium-bot.github.io/invite")
+    .setDescription("ium's discord server: https://discord.gg/WCf7n")
 
 
 
@@ -15,5 +15,5 @@ exports.run = async (bot, message, args) => {
 
 
 module.exports.help = {
-    name: "invite"
+    name: "support"
 }
