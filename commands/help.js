@@ -8,7 +8,7 @@ exports.run = async (bot, message, args) => {
     .setDescription("Prefix: `ium ` | All commands can be found here: https://ium-bot.github.io/commands")
     .addField("Moderation", "`ban` `clear` `kick` `mute` `poll` `unmute`")
     .addField("Info", "`about` `developer` `discord` `github` `ping` `server` `stats` `user`")
-    .addField("Utils", "`announce` `avatar` `date` `define` `hastebin` `help` `lmgtfy` `ping` `profile` `shorten` `translate` `vote` `weather`")
+    .addField("Utils", "`announce` `avatar` `date` `define` `dmhelp` `hastebin` `help` `lmgtfy` `ping` `profile` `shorten` `translate` `vote` `weather`")
     .addField("Fun", "`8ball` `bond` `choose` `clap` `dog` `level` `profile` `rate` `reverse` `say` `scale` `wave`")
     .addField("Economy", "`balance` `pay`")
     .addField("Math", "`divide` `exponent` `minus` `sqrt` `times`")
