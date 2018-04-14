@@ -26,7 +26,7 @@ exports.run = async (bot, message, args) => {
     .addField("Name", bot.user.username, true)
     .addField("Current Version", botconfig.version, true)
     .addField("Born On", bot.user.createdAt)
-    .addField('Users', + usersize + ' users', true)
+    .addField('Online Users', + usersize + ' online users', true)
     .addField("Servers", `${bot.guilds.size} servers.`, true)
     .addField("Text channels", text_channels, true)
     .addField("Voice Channels", voice_channels, true)
@@ -36,8 +36,8 @@ exports.run = async (bot, message, args) => {
     .addField("Uptime", uptime, true)
     .addField("Library",  "Discord.js", true)
     .setTimestamp();
-    
-    
+
+
 
 
     message.channel.send(botEmbed);

@@ -13,7 +13,7 @@ exports.run = async (bot, message, args) => {
     .setDescription("**Developer**: Tetra#4616 | **Version:** " + botconfig.version + " | **Library:** discord.js\nium is an aesthetic, simple, multi-purpose discord bot that has many commands, ranging from moderation commands to fun commands.")
     .addField("Website", "https://ium-bot.github.io", inline)
     .addField("Invite", "https://ium-bot.github.io/invite", inline)
-    .addField("Server", "https://discord.gg/WCf7n", inline)
+    .addField("Server", "https://discord.gg/Ac8HYtD", inline)
     .addField("Patreon", "https://www.patreon.com/ium", inline)
     .addField("Links", "[Trello](https://trello.com/b/3kvrAbIV/ium) | [Github](https://github.com/tetra-dev/ium) | [Issues](https://github.com/tetra-dev/ium/issues)");
 
