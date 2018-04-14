@@ -58,7 +58,7 @@ bot.on('guildCreate', guild => {
 	.setAuthor("ium", "https://ium-bot.github.io/ium.jpg")
 	.setColor('#f5a3fa')
 	.setThumbnail(sicon)
-	.setDescription("ium has been **added** from a server :)")
+	.setDescription("ium has been **added** to a server :)")
 	.addField("Guild", `${guild}`, inline)
 	.addField("Users", `${guild.memberCount}`, inline)
 	.addField("Owner", guild.owner, inline)
@@ -104,6 +104,32 @@ bot.on('error', console.error);
 bot.on('disconnect', () => console.log('Disconnecting...'));
 
 bot.on('reconnecting', () => console.log('Reconnecting...'));
+
+bot.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find('name', "ium-events");
+  if (!channel) return;
+	//Embed Creation
+	let memberEmbed = new Discord.RichEmbed()
+	.setColor('#a193ff')
+	.setDescription(`**${member}** has joined`)
+	.setFooter(`ID - ${member.id}`)
+	.setTimestamp();
+
+  channel.send(memberEmbed);
+});
+
+bot.on('guildMemberRemove', member => {
+  const channel = member.guild.channels.find('name', "ium-events");
+  if (!channel) return;
+	//Embed Creation
+	let memberEmbed2 = new Discord.RichEmbed()
+	.setColor('#66545e')
+	.setDescription(`**${member}** has left`)
+	.setFooter(`ID - ${member.id}`)
+	.setTimestamp();
+
+  channel.send(memberEmbed2);
+});
 
 bot.on("message", message => {
 	if (message.author.bot) return;
@@ -154,7 +180,7 @@ bot.on("message", message => {
 		.addField("Cooldown! 🙃", `You must wait **2** seconds between commands.`)
 		return message.channel.send(cooldownEmbed).then(message => {message.delete(5000)});
 	}
-	if(!message.member.hasPermissions("ADMINISTRATOR")){
+	if(!message.member.hasPermission("ADMINISTRATOR")){
 		coolDown.add(message.author.id);
 	}
 
