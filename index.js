@@ -3,8 +3,6 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const ytdl = require('ytdl-core');
-const ms = require("ms");
-let playTime = "1hr";
 let version = botconfig.version;
 let iumics = require("./money.json");
 let xp = require("./xp.json");
@@ -33,22 +31,8 @@ bot.on("ready", () => {
 
 
 	//Activity
-	var help = true;
-	var website = false;
-	if(help == true){
-		setTimeout(function(){
-			help = false;
-			website = true;
-		}, ms(playTime));
-		bot.user.setActivity(`ium help | ${botconfig.version}`);
-	}
-	if(website == true){
-		setTimeout(function(){
-			website = false
-			help = true
-		}, ms(playTime));
-		bot.user.setActivity(`https://ium-bot.github.io/`);
-	}
+	bot.user.setActivity(`ium help | ${botconfig.version}`);
+
 
 	//Restart Logs
 	let restartEmbed = new Discord.RichEmbed()
@@ -170,7 +154,7 @@ bot.on("message", message => {
 		.addField("Cooldown! 🙃", `You must wait **2** seconds between commands.`)
 		return message.channel.send(cooldownEmbed).then(message => {message.delete(5000)});
 	}
-	if(!message.member.hasPermission("ADMINISTRATOR")){
+	if(!message.member.hasPermissions("ADMINISTRATOR")){
 		coolDown.add(message.author.id);
 	}
 
