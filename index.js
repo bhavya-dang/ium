@@ -8,6 +8,7 @@ let iumics = require("./money.json");
 let xp = require("./xp.json");
 let coolDown = new Set();
 let coolSeconds = 2;
+let inline = true
 
 const newUsers = new Discord.Collection();
 bot.commands = new Discord.Collection();
@@ -33,7 +34,61 @@ bot.on("ready", () => {
 	.setDescription("ium has **restarted**")
 	.setTimestamp();
 
-	bot.channels.filter(c => c.name === 'ium-events').forEach(channel => channel.send(restartEmbed));
+	bot.channels.filter(c => c.id === '434521909745549333').forEach(channel => channel.send(restartEmbed));
+});
+
+bot.on('guildCreate', guild => {
+
+	const verlvl = {
+			0: "None",
+			1: "Low",
+			2: "Medium",
+			3: "(╯°□°）╯︵ ┻━┻",
+			4: "(ノಠ益ಠ)ノ彡┻━┻"
+		}
+
+	let sicon = guild.iconURL;
+	let guildEmbed = new Discord.RichEmbed()
+	.setAuthor("ium", "https://ium-bot.github.io/ium.jpg")
+	.setColor('#f5a3fa')
+	.setThumbnail(sicon)
+	.setDescription("ium has been **added** from a server :)")
+	.addField("Guild", `${guild}`, inline)
+	.addField("Users", `${guild.memberCount}`, inline)
+	.addField("Owner", guild.owner, inline)
+	.addField("Region", guild.region, inline)
+	.addField("Roles", guild.roles.size, inline)
+	.addField("Channels", guild.channels.size, inline)
+	.setFooter(`ID - ${guild.id}`)
+	.setTimestamp();
+
+  bot.channels.filter(c => c.id === '434521909745549333').forEach(channel => channel.send(guildEmbed));
+});
+
+bot.on('guildDelete', guild => {
+	const verlvl = {
+			0: "None",
+			1: "Low",
+			2: "Medium",
+			3: "(╯°□°）╯︵ ┻━┻",
+			4: "(ノಠ益ಠ)ノ彡┻━┻"
+		}
+
+	let sicon = guild.iconURL;
+	let guildEmbed = new Discord.RichEmbed()
+	.setColor('#34e7e4')
+	.setThumbnail(sicon)
+	.setDescription("ium has been **removed** from a server :(")
+	.addField("Guild", `${guild}`, inline)
+	.addField("Users", `${guild.memberCount}`, inline)
+	.addField("Owner", guild.owner, inline)
+	.addField("Region", guild.region, inline)
+	.addField("Roles", guild.roles.size, inline)
+	.addField("Channels", guild.channels.size, inline)
+	.setFooter(`ID - ${guild.id}`)
+	.setTimestamp();
+
+	bot.channels.filter(c => c.id === '434521909745549333').forEach(channel => channel.send(guildEmbed));
 });
 
 bot.on('warn', console.warn);
