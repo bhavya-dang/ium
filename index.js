@@ -29,9 +29,8 @@ bot.on("ready", () => {
 	bot.user.setActivity(`ium help | ${botconfig.version}`);
 
 	let restartEmbed = new Discord.RichEmbed()
-	.setAuthor("ium event", "https://ium-bot.github.io/ium.jpg")
 	.setColor('#f5a3fa')
-	.addField("Event", "ium has restarted <:ium:434182659069968394>")
+	.setDescription("ium has **restarted**")
 	.setTimestamp();
 
 	bot.channels.filter(c => c.name === 'ium-events').forEach(channel => channel.send(restartEmbed));
