@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const ytdl = require('ytdl-core');
+const ms = require("ms");
+let playTime = "1hr";
 let version = botconfig.version;
 let iumics = require("./money.json");
 let xp = require("./xp.json");
@@ -25,10 +27,30 @@ fs.readdir("./commands/", (err, files) => {
 
 
 bot.on("ready", () => {
+	//PuTTy
 	console.log(`${bot.user.username} is online`);
 	console.log(`${bot.user.tag} running on ${bot.guilds.size} guilds with ${bot.users.size} users.`);
-	bot.user.setActivity(`ium help | ${botconfig.version}`);
 
+
+	//Activity
+	var help = true;
+	var website = false;
+	if(help == true){
+		setTimeout(function(){
+			help = false;
+			website = true;
+		}, ms(playTime));
+		bot.user.setActivity(`ium help | ${botconfig.version}`);
+	}
+	if(website == true){
+		setTimeout(function(){
+			website = false
+			help = true
+		}, ms(playTime));
+		bot.user.setActivity(`https://ium-bot.github.io/`);
+	}
+
+	//Restart Logs
 	let restartEmbed = new Discord.RichEmbed()
 	.setColor('#f5a3fa')
 	.setDescription("ium has **restarted**")
