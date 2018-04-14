@@ -21,15 +21,20 @@ fs.readdir("./commands/", (err, files) => {
 	  bot.on(eventName, (...args) => eventFunction.run(bot, ...args));
 	});
   });
-  
+
 
 bot.on("ready", () => {
 	console.log(`${bot.user.username} is online`);
-	bot.user.setActivity(`ium help | ${botconfig.version}`);
-});
-
-bot.on('ready', () => {
 	console.log(`${bot.user.tag} running on ${bot.guilds.size} guilds with ${bot.users.size} users.`);
+	bot.user.setActivity(`ium help | ${botconfig.version}`);
+
+	let restartEmbed = new Discord.RichEmbed()
+	.setAuthor("ium event", "https://ium-bot.github.io/ium.jpg")
+	.setColor('#f5a3fa')
+	.addField("Event", "ium has restarted <:ium:434182659069968394>")
+	.setTimestamp();
+
+	bot.channels.filter(c => c.name === 'ium-events').forEach(channel => channel.send(restartEmbed));
 });
 
 bot.on('warn', console.warn);
