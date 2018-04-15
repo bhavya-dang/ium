@@ -2,9 +2,9 @@ const Discord = require("discord.js");
 const ms = require("ms");
 
 exports.run = async (bot, message, args) => {
-    
+
       //!tempmute @user 1s/m/h/d
-    
+
       let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
       if(!tomute) return message.channel.send("**User not found.**");
       if(tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send("**You do not have permission to mute them!**");
@@ -30,16 +30,16 @@ exports.run = async (bot, message, args) => {
       //end of create role
       let mutetime = args[1];
       if(!mutetime) return message.channel.send("**Specify a time for the user to be muted.**");
-    
+
       await(tomute.addRole(muterole.id));
       message.send.channel(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
-    
+
       setTimeout(function(){
         tomute.removeRole(muterole.id);
         message.channel.send(`<@${tomute.id}> has been unmuted!`);
       }, ms(mutetime));
-    
-    
+
+
     //end of module
     }
 
