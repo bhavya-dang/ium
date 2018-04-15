@@ -1,3 +1,4 @@
+/**
 const Discord = require("discord.js");
 const db = require (`quick.db`);
 ms = require(`parse-ms`)
@@ -36,7 +37,7 @@ exports.run = async (bot, message, args) => {
     .setAuthor(message.author.username)
     .setColor("FFFFFF")
     .addField("💰Total iumics", `You have a total of **${userIumics}** iumics`);
-    
+
     message.channel.send(moneyEmbed);
 
 }

@@ -7,10 +7,8 @@ exports.run = (bot, message, args, tools) => {
 
     let split = '|';
 
-    if(!args[0]) { 
-        
-        return message.channel.send("**Announce an announcment with a title, and a description!** ium announce <title> <description>");
-
+    if(!args[0]) {
+        return message.channel.send("**Announce an announcment with a title, and a description.** `ium announce <description/announcment>`");
     }
 
     args = args.join(' ').split(split);
@@ -39,7 +37,7 @@ exports.run = (bot, message, args, tools) => {
     .setTitle(option.title)
 
     message.channel.send(announceEmbed);
-    
+
 }
 
 

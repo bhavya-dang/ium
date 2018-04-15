@@ -10,15 +10,13 @@ module.exports.run = async (bot, message, args) => {
    let result = Math.pow(parseInt(num1), parseInt(num2));
 
    let minusEmbed = new Discord.RichEmbed()
-
    .setColor("#000000")
    .setTitle(`${args[0]} ^ ${args[1]} = **${result}**`);
 
    message.channel.send(minusEmbed);
 
-
-
 }
+
 module.exports.help = {
     name: "exponent"
-  }
+}

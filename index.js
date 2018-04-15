@@ -29,10 +29,8 @@ bot.on("ready", () => {
 	console.log(`${bot.user.username} is online`);
 	console.log(`${bot.user.tag} running on ${bot.guilds.size} guilds with ${bot.users.size} users.`);
 
-
 	//Activity
 	bot.user.setActivity(`ium help | ${botconfig.version}`);
-
 
 	//Restart Logs
 	let restartEmbed = new Discord.RichEmbed()
@@ -40,7 +38,7 @@ bot.on("ready", () => {
 	.setDescription("ium has **restarted**")
 	.setTimestamp();
 
-	bot.channels.filter(c => c.id === '434521909745549333').forEach(channel => channel.send(restartEmbed));
+	bot.channels.filter(c => c.id === '434521909745549333').forEach(channel => channel.send(restartEmbed).then(message => {message.delete(20000)}))
 });
 
 bot.on('guildCreate', guild => {

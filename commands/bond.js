@@ -2,12 +2,8 @@ const Discord = require("discord.js")
 
 exports.run = async (bot, message, args) => {
 
-   //!8ball question
-   //if(!args[0]) return message.channel.send("**See how well two users love each other by mentioning at least one user.** Usage: ium bond <user> <user>");
-   
-   //var bondLevelResults = ["​🖤🖤🖤🖤🖤🖤🖤🖤🖤🖤", "​♥🖤🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥🖤🖤🖤🖤🖤🖤🖤🖤", "♥♥♥🖤🖤🖤🖤🖤🖤🖤", "♥♥♥♥🖤🖤🖤🖤🖤🖤", "♥♥♥♥♥🖤🖤🖤🖤🖤", "♥♥♥♥♥♥🖤🖤🖤🖤", "♥♥♥♥♥♥♥🖤🖤🖤", "♥♥♥♥♥♥♥♥🖤🖤", "♥♥♥♥♥♥♥♥♥🖤", "♥♥♥♥♥♥♥♥♥♥", "♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥"];
+  if(!args[0]) return message.channel.send("**Mention a user or users that you want to bond.** `ium bond <user> <user>`")
 
-   //var bondLevel = Math.floor((Math.random() * bondLevelResults.length));
    var bondLevel = Math.floor(Math.random() * 102);
    let user1 = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
    let user2 = message.guild.member(message.guild.members.get(args[1]));
@@ -68,7 +64,7 @@ exports.run = async (bot, message, args) => {
     if (bondLevel >= 0 && bondLevel < 10) {
         var ship = 'Not even possible...'
         var bondLevelResults = `🖤🖤🖤🖤🖤🖤🖤🖤🖤🖤`
-    } 
+    }
 
 
     if(!args[1]){
@@ -79,11 +75,11 @@ exports.run = async (bot, message, args) => {
         .addField("Bond Score", `${bondLevel}%`)
         .addField("Bond Bar", bondLevelResults)
         .addField("Summary", ship);
-     
-     
+
+
         return message.channel.send(bondEmbed)
-    }  
-    
+    }
+
     if(!args[2]){
         var bondEmbed2 = new Discord.RichEmbed()
 
@@ -92,13 +88,13 @@ exports.run = async (bot, message, args) => {
         .addField("Bond Score", `${bondLevel}%`)
         .addField("Bond Bar", bondLevelResults)
         .addField("Summary", ship);
-     
-     
+
+
         return message.channel.send(bondEmbed2)
-    }               
+    }
 
 
-    if(!args[3]) { 
+    if(!args[3]) {
 
         var bondEmbed3 = new Discord.RichEmbed()
 
@@ -107,11 +103,10 @@ exports.run = async (bot, message, args) => {
         .addField("Bond Score", `${bondLevel}%`)
         .addField("Bond Bar", bondLevelResults)
         .addField("Summary", ship);
-     
-     
+
+
         return message.channel.send(bondEmbed)
     }
-    
 }
 
 

@@ -7,8 +7,8 @@ module.exports.run = (bot, message, args) => {
   let member = message.guild.member(message.mentions.members.first()) || message.guild.members.get(args[0]);
   let authorM = message.author;
   let target = message.mentions.users.first();
-  if (!member) return message.reply(`Mention someone to fight!`);
-  if (member.id === message.author.id) return message.reply(`You can't fight yourself!`);
+  if (!member) return message.reply("**Mention someone to fight!** `ium fight <user>`");
+  if (member.id === message.author.id) return message.reply("You can't fight yourself! `ium fight <user>`");
   if(member.id === bot.user.id) return message.reply("You can't fight AI...");
 
   if(!xp[message.author.id]){

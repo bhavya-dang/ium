@@ -2,25 +2,20 @@ const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
 
-   //!8ball question
-   if(!args[1]) return message.channel.send("**Type a question with two or mords!** ium 8ball Am I a furry?");
-   let replies = ["Yes", "No", "I don't know", "Ask again later!", "Nope", "I am not sure!", "You tell me"];
+   if(!args[1]) return message.channel.send("**Type a question with two or more words!** `ium 8ball Am I a furry`");
+   let replies = ["Yes", "No", "I don't know", "Ask again later!", "Nope", "I am not sure!", "Pls No", "You tell me"];
 
    let result = Math.floor((Math.random() * replies.length));
    let question = args.join(" ");
 
    let ballembed = new Discord.RichEmbed()
-
    .setAuthor(message.author.username)
    .setColor("#000000")
    .addField("Question", question)
    .addField("Answer", replies[result]);
 
    message.channel.send(ballembed)
-
-
 }
-
 
 module.exports.help = {
     name: "8ball"
