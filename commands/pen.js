@@ -4,8 +4,7 @@ let pens = "9";
 
 module.exports.run = (bot, message, args) => {
 
-  let pene = ':pen_ballpoint::pen_ballpoint::pen_ballpoint::pen_ballpoint::pen_ballpoint::pen_ballpoint::pen_ballpoint::pen_ballpoint::pen_ballpoint:';
-
+  let user = message.mentions.users.first() || message.author;
   let penGameEmbed = new Discord.RichEmbed()
   .setAuthor("Pen Game", "https://images.emojiterra.com/emojione/v2/512px/1f58a.png")
   .setColor("#77c9ff")
@@ -14,11 +13,18 @@ module.exports.run = (bot, message, args) => {
    if(!args[0]) return  message.channel.send(penGameEmbed)
 
    if(args[0] == "start"){
-     game = "true";
+     game = "true"
+     pens = 9
+     let penCount = 0;
+     let penShow = '🖊';
+     while (pens > penCount) {
+       penShow = penShow + '🖊'
+       penCount = penCount + 1
+     }
      message.channel.send("**Game has started!** (Need help? Type: `ium pen`)")
      let penGameEmbed = new Discord.RichEmbed()
      .setColor("#77c9ff")
-     .setDescription("🖊🖊🖊🖊🖊🖊🖊🖊🖊");
+     .setDescription(`${penShow}`);
      return message.channel.send(penGameEmbed)
    }
 
@@ -32,27 +38,48 @@ module.exports.run = (bot, message, args) => {
   if(game === "true"){
 
     if(args[0] == "1"){
-      pens--;
-      var curPene = pene.slice(0, -15);
+      pens = pens - 1
+      let penCount = 0;
+      let penShow = '🖊';
+      while (pens > penCount) {
+        penShow = penShow + '🖊'
+        penCount = penCount + 1
+      }
       let penGameEmbed = new Discord.RichEmbed()
       .setColor("#77c9ff")
-      .setDescription(curPene);
+      .setDescription(`${penShow}`)
+      .setFooter("You Played", user.displayAvatarURL)
+      .setTimestamp();
       return message.channel.send(penGameEmbed)
     }
     if(args[0] == "2"){
-      pens = pens - 2;
-      var curPene = pene.slice(0, -30);
+      pens = pens - 2
+      let penCount = 0;
+      let penShow = '🖊';
+      while (pens > penCount) {
+        penShow = penShow + '🖊'
+        penCount = penCount + 1
+      }
       let penGameEmbed = new Discord.RichEmbed()
       .setColor("#77c9ff")
-      .setDescription(curPene);
+      .setDescription(`${penShow}`)
+      .setFooter("You Played", user.displayAvatarURL)
+      .setTimestamp();
       return message.channel.send(penGameEmbed)
     }
-    if(args[0] == "3"){
-      pens = pens - 3;
-      var curPene = pene.slice(0, -45);
+    if(args[0] == "3") {
+      pens = pens - 3
+      let penCount = 0;
+      let penShow = '🖊';
+      while (pens > penCount) {
+        penShow = penShow + '🖊'
+        penCount = penCount + 1
+      }
       let penGameEmbed = new Discord.RichEmbed()
       .setColor("#77c9ff")
-      .setDescription(curPene);
+      .setDescription(`${penShow}`)
+      .setFooter("You Played", user.displayAvatarURL)
+      .setTimestamp();
       return message.channel.send(penGameEmbed)
     }
     if(parseInt(args[0]) !== "1" || parseInt(args[0]) !== "2" || parseInt(args[0]) !== "3")
