@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 exports.run = async (bot, message, args) => {
 
-   if(!args[0]) return message.channel.send("Mention someone to kill!");
+   if(!args[0]) return message.channel.send("**Mention someone to kill.** `ium kick <user>`");
    let member = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
 
    let random = Math.random() * 3 + 1;

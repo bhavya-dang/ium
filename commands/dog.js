@@ -9,7 +9,8 @@ exports.run = async (bot, message, args) => {
     let dogEmbed = new Discord.RichEmbed()
     .setColor("#bd9a82")
     .setTitle("Dog :dog:")
-    .setImage(body.url);
+    .setImage(body.url)
+    .setFooter("Powered by random.dog");
 
     message.channel.send(dogEmbed);
 }

@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const randomizeCase = word => word.split('').map(c => Math.random() > 0.5 ? c.toUpperCase() : c.toLowerCase()).join('');
 
 exports.run = async (bot, message, args) => {
-    if (args.length < 1) return message.channel.send("**I need some text to mock.**")
+    if (args.length < 1) return message.channel.send("**I need some text to mock.** `ium mock Zucc`")
 
     let mockEmbed = new Discord.RichEmbed()
     .setColor(`RANDOM`)

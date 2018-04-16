@@ -12,7 +12,7 @@ exports.run = async (bot, message, args) => {
         .setTitle(`Avatar`)
         .setDescription("[Avatar Link]("+mentionedUser.displayAvatarURL+")")
         .setFooter(`Requested by ${message.author.tag}`);
-        
+
         message.channel.send(embed)
 
 

@@ -26,7 +26,7 @@ exports.run = (bot, message, args) => {
   .setColor("#7f46b7")
   .addField("Level", curlvl, true)
   .addField("XP", curxp, true)
-  .setFooter(`${difference} XP till level up 🎉`, message.author.displayAvatarURL);
+  .setFooter(`${difference} XP till level up`, message.author.displayAvatarURL);
 
   return message.channel.send(lvlEmbed);
 }
@@ -54,9 +54,6 @@ if(!xp[user.id]){
  .setFooter(`${udifference} XP till level up`, target.displayAvatarURL);
 
  return message.channel.send(ulvlEmbed);
-
-
-
 
 }
 

@@ -3,10 +3,8 @@ const ms = require("ms");
 
 exports.run = async (bot, message, args) => {
 
-      //!tempmute @user 1s/m/h/d
-
       let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-      if(!tomute) return message.channel.send("**User not found.**");
+      if(!tomute) return message.channel.send("**User not found.** ium mute <user> <time (optional)>");
       if(tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send("**You do not have permission to mute them!**");
       let muterole = message.guild.roles.find(`name`, "muted");
       //start of create role
@@ -29,7 +27,12 @@ exports.run = async (bot, message, args) => {
       }
       //end of create role
       let mutetime = args[1];
-      if(!mutetime) return message.channel.send("**Specify a time for the user to be muted.**");
+      if(!mutetime){
+        message.channel.send("**Specify a time for the user to be muted.**");
+
+        await(tomute.addRole(muterole.id));
+        message.send.channel(`<@${tomute.id}> has been muted. (Note: you can set a time for the user to be muted: `ium mute <user> <time>`)`);
+      }
 
       await(tomute.addRole(muterole.id));
       message.send.channel(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
@@ -40,7 +43,6 @@ exports.run = async (bot, message, args) => {
       }, ms(mutetime));
 
 
-    //end of module
     }
 
     module.exports.help = {
