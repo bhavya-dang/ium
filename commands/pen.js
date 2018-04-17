@@ -34,6 +34,8 @@ module.exports.run = (bot, message, args) => {
      }
    }
 
+  let penBot = Math.floor(Math.random() * 3) + 1;
+  let botAvatar = bot.user.displayAvatarURL;
 
   if(game === "true"){
 
@@ -50,7 +52,19 @@ module.exports.run = (bot, message, args) => {
       .setDescription(`${penShow}`)
       .setFooter("You Played", user.displayAvatarURL)
       .setTimestamp();
-      return message.channel.send(penGameEmbed)
+      message.channel.send(penGameEmbed)
+      pens = pens - penBot;
+      while (pens > penCount) {
+        penShow = penShow + '🖊'
+        penCount = penCount + penBot;
+      }
+      let penGameEmbed1 = new Discord.RichEmbed()
+      .setColor("#77c9ff")
+      .setDescription(`${penShow}`)
+      .setFooter("I Played", botAvatar)
+      .setTimestamp();
+      message.channel.send(penGameEmbed1)
+
     }
     if(args[0] == "2"){
       pens = pens - 2
@@ -65,7 +79,18 @@ module.exports.run = (bot, message, args) => {
       .setDescription(`${penShow}`)
       .setFooter("You Played", user.displayAvatarURL)
       .setTimestamp();
-      return message.channel.send(penGameEmbed)
+      message.channel.send(penGameEmbed)
+      pens = pens - penBot;
+      while (pens > penCount) {
+        penShow = penShow + '🖊'
+        penCount = penCount + penBot;
+      }
+      let penGameEmbed1 = new Discord.RichEmbed()
+      .setColor("#77c9ff")
+      .setDescription(`${penShow}`)
+      .setFooter("I Played", botAvatar)
+      .setTimestamp();
+      message.channel.send(penGameEmbed1)
     }
     if(args[0] == "3") {
       pens = pens - 3
@@ -80,7 +105,18 @@ module.exports.run = (bot, message, args) => {
       .setDescription(`${penShow}`)
       .setFooter("You Played", user.displayAvatarURL)
       .setTimestamp();
-      return message.channel.send(penGameEmbed)
+      message.channel.send(penGameEmbed)
+      pens = pens - penBot;
+      while (pens > penCount) {
+        penShow = penShow + '🖊'
+        penCount = penCount + penBot;
+      }
+      let penGameEmbed1 = new Discord.RichEmbed()
+      .setColor("#77c9ff")
+      .setDescription(`${penShow}`)
+      .setFooter("I Played", botAvatar)
+      .setTimestamp();
+      message.channel.send(penGameEmbed1)
     }
     if(parseInt(args[0]) !== "1" || parseInt(args[0]) !== "2" || parseInt(args[0]) !== "3")
       return message.channel.send("**You may only take 1, 2, or 3 pens at once!** (Need help? Type: `ium pen`)");
