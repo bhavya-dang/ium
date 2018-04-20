@@ -31,7 +31,7 @@ exports.run = async (bot, message, args) => {
         message.channel.send("**Specify a time for the user to be muted.**");
 
         await(tomute.addRole(muterole.id));
-        message.send.channel(`<@${tomute.id}> has been muted. (Note: you can set a time for the user to be muted: `ium mute <user> <time>`)`);
+        message.send.channel(`<@${tomute.id}> has been muted. (Note: you can set a time for the user to be muted: ium mute <user> <time>)`);
       }
 
       await(tomute.addRole(muterole.id));

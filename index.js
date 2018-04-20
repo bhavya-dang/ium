@@ -31,7 +31,7 @@ bot.on("ready", () => {
 	console.log(`${bot.user.tag} running on ${bot.guilds.size} guilds with ${bot.users.size} users.`);
 
 	//Activity
-	bot.user.setActivity(`ium help | ${botconfig.version}`);
+	bot.user.setActivity(`ium help | ${botconfig.version} RIP CPU`);
 
 	//Restart Logs
 	let restartEmbed = new Discord.RichEmbed()
@@ -179,7 +179,7 @@ bot.on("message", message => {
 		.addField("Cooldown! 🙃", `You must wait **2** seconds between commands.`)
 		return message.channel.send(cooldownEmbed).then(message => {message.delete(5000)});
 	}
-	if(!message.member.hasPermission("ADMINISTRATOR")){
+	if(!message.member.hasPermission("ADMINISTRATOR") || !message.author.id === "275831434772742144"){
 		coolDown.add(message.author.id);
 	}
 
@@ -260,10 +260,6 @@ const commands = {
 					msg.channel.send(`Time of queue: ${Math.floor(dispatcher.time / 60000)}:${Math.floor((dispatcher.time % 60000)/1000) <10 ? '0'+Math.floor((dispatcher.time % 60000)/1000) : Math.floor((dispatcher.time % 60000)/1000)}`);
 				}
 			});
-			dispatcher.on('end', () => {
-				collector.stop();
-				play(queue[msg.guild.id].songs.shift());
-			});
 			dispatcher.on('error', (err) => {
 				return msg.channel.send('error: ' + err).then(() => {
 					collector.stop();
@@ -295,10 +291,10 @@ const commands = {
 		queue[msg.guild.id].songs.forEach((song, i) => { tosend.push(`${i+1}. ${song.title} - Requested by: ${song.requester}`);});
 		msg.channel.send(`__**${msg.guild.name}'s Music Queue:**__ Currently **${tosend.length}** songs queued ${(tosend.length > 15 ? '*[Only next 15 shown]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
 	},
-	'help': (msg) => {
-		let tosend = ['```xl', botconfig.prefix + 'join : "Join Voice channel of msg sender"',	botconfig.prefix + 'add : "Add a valid youtube link to the queue"', botconfig.prefix + 'queue : "Shows the current queue, up to 15 songs shown."', botconfig.prefix + 'play : "Play the music queue if already joined to a voice channel"', '', 'the following commands only function while the play command is running:'.toUpperCase(), botconfig.prefix + 'pause : "pauses the music"',	botconfig.prefix + 'resume : "resumes the music"', botconfig.prefix + 'skip : "skips the playing song"', botconfig.prefix + 'time : "Shows the playtdlime of the song."',	'volume+(+++) : "increases volume by 2%/+"',	'volume-(---) : "decreases volume by 2%/-"',	'```'];
-		msg.channel.send(tosend.join('\n'));
-	},
+	//'help': (msg) => {
+		//let tosend = ['```xl', botconfig.prefix + 'join : "Join Voice channel of msg sender"',	botconfig.prefix + 'add : "Add a valid youtube link to the queue"', botconfig.prefix + 'queue : "Shows the current queue, up to 15 songs shown."', botconfig.prefix + 'play : "Play the music queue if already joined to a voice channel"', '', 'the following commands only function while the play command is running:'.toUpperCase(), botconfig.prefix + 'pause : "pauses the music"',	botconfig.prefix + 'resume //: "resumes the music"', botconfig.prefix + 'skip : "skips the playing song"', botconfig.prefix + 'time : "Shows the playtdlime of the song."',	'volume+(+++) : "increases volume by 2%/+"',	'volume-(---) : "decreases volume by 2%/-"',	'```'];
+		//msg.channel.send(tosend.join('\n'));
+	//},
 };
 
 bot.on('message', msg => {

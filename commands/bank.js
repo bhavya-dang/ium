@@ -22,12 +22,12 @@ exports.run = async (bot, message, args) => {
     .setAuthor(message.author.username)
     .setColor("FFFFFF")
     .addField("💰Total iumics", `You have a total of **${memberIumics}** iumics`);
-    
+
     return message.channel.send(moneyEmbed1);
 
 }
 
-    
+
     if(!iumics[user.id]){
         iumics[user.id] = {
             iumics: 0
@@ -40,7 +40,7 @@ exports.run = async (bot, message, args) => {
     .setAuthor(member.user.username)
     .setColor("FFFFFF")
     .addField("💰Total iumics", `**${user}** has a total of **${userIumics}** iumics`);
-    
+
     return message.channel.send(moneyEmbed2);
 
 
