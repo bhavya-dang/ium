@@ -12,7 +12,7 @@
   <img src="https://discordbots.org/api/widget/servers/421511226015612929.svg" alt="Discord Music Bot" />
 </a>
 <a href="https://discordbots.org/bot/421511226015612929" >
-  <img src="https://discordbots.org/api/widget/lib/421511226015612929.svg" alt="Discord Music Bot" />
+  <img src="https://discordbots.org/api/widget/owner/421511226015612929.svg" alt="Discord Music Bot" />
 </a>
 </html>
 
