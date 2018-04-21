@@ -1,7 +1,6 @@
 # ium
 >ium is a multi-purpose discord bot that has many commands, ranging from moderation commands to fun commands. ium is made with the discord.js library and some other random stuff, ium is maintained and developed by Tetra.
-<!DOCTYPE html>
-<html>
+<div>
     <header>
         <img align="right" href="https://ium-bot.github.io/" src="https://ium-bot.github.io/ium.jpg" height="220" width="220">
     </header>
@@ -16,5 +15,6 @@
 </a>    
     <a class="discord-widget" href="http://discord.gg/Ac8HYtD"> <img src="https://discordapp.com/api/guilds/330982069239021569/embed.png"> </a>
     <p><a href="https://ium-bot.github.io/invite">Invite ium</a></p>
-</html>
+</div>
+>test
 
