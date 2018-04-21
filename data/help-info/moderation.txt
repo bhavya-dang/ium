@@ -1,0 +1,6 @@
+`ban` - Bans the user that you mention from your server.
+`clear` - Deletes a certain amount of messages you give it.
+`kick` - Kicks the user that you mention from your server.
+`mute` - Mutes the user that you mention from your server.
+`poll` - Makes a poll in the server.
+`unmute` - Unmutes the user that you mention from your server.

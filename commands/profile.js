@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const botconfig = require("../botconfig");
-let xp = require("../xp.json");
-let iumics = require("../money.json");
+let xp = require("../data/xp.json");
+let iumics = require("../data/money.json");
 
 exports.run = (bot, message, args) => {
 

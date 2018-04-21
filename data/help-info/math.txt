@@ -1,0 +1,5 @@
+`divide` - Divides two numbers that you give it.
+`exponent` - Raises a number that you provide by the power that you provide.
+`minus` - Subtracts two numbers that you provide.
+`sqrt` - Calculates the square root of the number that you provide.
+`times` - Multiplies two numbers that you provide.

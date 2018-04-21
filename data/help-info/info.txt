@@ -1,0 +1,8 @@
+`about` - Displays info about the bot.
+`developer` - Shows info about the developer of the bot.
+`discord` - Provides a link to ium's official discord server.
+`github` - Provides a link to ium's github.
+`ping` - Displays ium's ping.
+`server` - Displays information and stats on your server.
+`stats` - Displays stats about ium.
+`user` - Displays information and stats about the user you mention.

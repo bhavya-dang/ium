@@ -1,0 +1,12 @@
+`announce` - Makes a rich embed with your announcement in it.
+`avatar` - Displays an enlarged image of a user's avatar, with a direct link to it.
+`date` - Displays the date of a city you give it.
+`define` - Defines a word, and gives an example of it in context. (Definitions from urban dictionary)
+`hastebin` - Pastes code that you provide in hastebin, and sends you the link to it.
+`help` - Displays all of ium's commands.
+`lmgtfy` - Searches your input up on google.
+`profile` - Provides a users iumics, xp and level.
+`shorten` - Shortens the URL that you provide.
+`translate` - Translates text that you provide, in a language that you provide.
+`vote` - Makes a vote in the server, and reacts with checkmark and x.
+`weather` - Displays the weather of a city or place you provide.

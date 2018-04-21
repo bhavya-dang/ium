@@ -1,0 +1,12 @@
+`8ball` - Ask ium a question and it will answer.
+`bond` - Displays how well two users would love/bond together.
+`choose` - Chooses between two options you give it.
+`clap` - Replaces the spaces in your sentence with clap emojis, and adds random capitalization .
+`dog` - Sends a random image of a dog from random.dog
+`level` - Displays your level, and how much xp you have. (You gain xp by speaking in chat)
+`profile` - Provides a users iumics, xp and level.
+`rate` - Rates the user you provide from a scale of 1-10
+`reverse` - Reverses the sentence you provide.
+`say` - Repeats the sentence you provide
+`scale` - Rates something that you provide.
+`wave` - ium waves to you with a horrible animation.

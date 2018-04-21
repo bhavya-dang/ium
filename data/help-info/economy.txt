@@ -1,0 +1,2 @@
+`balance` - Displays how much iumics you have in your bank. (Earn more iumics by using more bot commands)
+`pay` - Gives an amount of money that you provide to the user you mention and gets added to their bank.

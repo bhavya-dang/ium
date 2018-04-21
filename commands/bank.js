@@ -1,7 +1,7 @@
 
 
 const Discord = require("discord.js");
-let iumics = require("../money.json");
+let iumics = require("../data/money.json");
 
 exports.run = async (bot, message, args) => {
     const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;

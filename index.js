@@ -3,9 +3,11 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const ytdl = require('ytdl-core');
+const DBL = require("dblapi.js");
+const dbl = new DBL(botconfig.dbltoken, bot);
 let version = botconfig.version;
-let iumics = require("./money.json");
-let xp = require("./xp.json");
+let iumics = require("./data/money.json");
+let xp = require("./data/xp.json");
 let coolDown = new Set();
 let coolSeconds = 2;
 let inline = true;
@@ -179,7 +181,7 @@ bot.on("message", message => {
 		.addField("Cooldown! 🙃", `You must wait **2** seconds between commands.`)
 		return message.channel.send(cooldownEmbed).then(message => {message.delete(5000)});
 	}
-	if(!message.member.hasPermission("ADMINISTRATOR") || !message.author.id === "275831434772742144"){
+	if(!message.member.hasPermission("ADMINISTRATOR")){
 		coolDown.add(message.author.id);
 	}
 
@@ -198,7 +200,7 @@ bot.on("message", message => {
 		iumics[message.author.id] = {
 			iumics: iumics[message.author.id].iumics + iumicAmt
 		}
-	fs.writeFile("./money.json", JSON.stringify(iumics), (err) => {
+	fs.writeFile("./data/money.json", JSON.stringify(iumics), (err) => {
 		if(err) console.log(err)
 	});
 	let moneyEmbed = new Discord.RichEmbed()
