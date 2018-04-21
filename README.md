@@ -1,4 +1,5 @@
 # ium
+[![Discord](https://discordapp.com/api/guilds/330982069239021569/widget.png)](https://discord.gg/Ac8HYtD)
 >ium is a multi-purpose discord bot that has many commands, ranging from moderation commands to fun commands.
 <!DOCTYPE html>
 <html>
