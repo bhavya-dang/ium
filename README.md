@@ -1,5 +1,4 @@
 # ium
-[![Discord](https://discordapp.com/api/guilds/330982069239021569/widget.png)](https://discord.gg/Ac8HYtD)
 >ium is a multi-purpose discord bot that has many commands, ranging from moderation commands to fun commands.
 <!DOCTYPE html>
 <html>
@@ -15,6 +14,6 @@
 <a href="https://discordbots.org/bot/421511226015612929" >
   <img src="https://discordbots.org/api/widget/owner/421511226015612929.svg" alt="Discord Music Bot" />
 </a>    
-    <a class="discord-widget" href="http://discord.gg/Ac8HYtD"> <img src="https://discordapp.com/api/guilds/330982069239021569/widget.png?style=shield"> </a>
+    <a class="discord-widget" href="http://discord.gg/Ac8HYtD"> <img src="https://discordapp.com/api/guilds/330982069239021569/embed.png"> </a>
 </html>
 
