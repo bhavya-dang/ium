@@ -1,10 +1,7 @@
- ![ium](https://ium-bot.github.io/ium.jpg)
- #ium
+![ium](https://ium-bot.github.io/ium.jpg)
+##ium
 >ium is a multi-purpose discord bot that has many commands, ranging from moderation commands to fun commands. ium is made with the discord.js library and some other random stuff, ium is maintained and developed by Tetra.
 <div>
-    <header>
-        <img align="right" href="https://ium-bot.github.io/" src="https://ium-bot.github.io/ium.jpg" height="220" width="220">
-    </header>
     <a href="https://discordbots.org/bot/421511226015612929" >
   <img src="https://discordbots.org/api/widget/status/421511226015612929.svg" alt="Discord Music Bot" />
 </a>
