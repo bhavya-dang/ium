@@ -1,5 +1,5 @@
 # ium
->ium is a multi-purpose discord bot that has many commands, ranging from moderation commands to fun commands.
+>ium is a multi-purpose discord bot that has many commands, ranging from moderation commands to fun commands. ium is made with the discord.js library and some other random stuff, ium is maintained and developed by Tetra.
 <!DOCTYPE html>
 <html>
     <header>
