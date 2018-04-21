@@ -13,9 +13,7 @@
 </a>
 <a href="https://discordbots.org/bot/421511226015612929" >
   <img src="https://discordbots.org/api/widget/owner/421511226015612929.svg" alt="Discord Music Bot" />
-</a>
-        <a href="https://discord.gg/Ac8HYtD">
-        <img src="https://discordapp.com/api/guilds/330982069239021569/embed.png" />
-    </a>
+</a>    
+    <a class="discord-widget" href="http://discord.gg/Ac8HYtD" title="Join us on Discord"> <img src="https://discordapp.com/api/guilds/330982069239021569/widget.png?style=shield"> </a> </a>
 </html>
 
