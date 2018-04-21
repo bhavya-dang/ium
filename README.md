@@ -15,6 +15,6 @@
   <img src="https://discordbots.org/api/widget/owner/421511226015612929.svg" alt="Discord Music Bot" />
 </a>    
     <a class="discord-widget" href="http://discord.gg/Ac8HYtD"> <img src="https://discordapp.com/api/guilds/330982069239021569/embed.png"> </a>
-    <p>Click <a href="https://ium-bot.github.io/invite">here</a> to invite ium to your server!</p>
+    <p><a href="https://ium-bot.github.io/invite">Invite ium</a></p>
 </html>
 
