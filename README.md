@@ -1,5 +1,8 @@
 # ium
 >ium is a multi-purpose discord bot that has many commands, ranging from moderation commands to fun commands.
+
+
+
 <!DOCTYPE html>
 <html>
     <header>
@@ -15,4 +18,3 @@
   <img src="https://discordbots.org/api/widget/owner/421511226015612929.svg" alt="Discord Music Bot" />
 </a>
 </html>
-

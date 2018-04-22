@@ -3,8 +3,6 @@
 #json files
 botconfig.json
 package-lock.json
-money.json
-xp.json
 
 #stuff...
 node_modules

@@ -132,6 +132,29 @@ bot.on('guildMemberRemove', member => {
   channel.send(memberEmbed2);
 });
 
+/**
+dbl.webhook.on('ready', hook => {
+  console.log(`Webhook running at http://${hook.hostname}:${hook.port}${hook.path}`);
+
+	console.log(`User with ID ${vote.user} just voted!`);
+	let hookEmbed = new Discord.RichEmbed()
+	.setAuthor("ium", "https://ium-bot.github.io/ium.jpg")
+	.setColor('#90e386')
+	.setDescription("Webhook running at http://" + hook.hostname + ":" + hook.port + ":" + hook.path);
+
+	bot.channels.filter(c => c.id === '434521909745549333').forEach(channel => channel.send(hookEmbed));
+});
+dbl.webhook.on('vote', vote => {
+  console.log(`User with ID ${vote.user} just voted!`);
+	let voteEmbed = new Discord.RichEmbed()
+	.setAuthor("ium", "https://ium-bot.github.io/ium.jpg")
+	.setColor('#f55783')
+	.setDescription("User with ID " + vote.user + "just voted! :)")/
+
+	bot.channels.filter(c => c.id === '434521909745549333').forEach(channel => channel.send(voteEmbed));
+});
+*/
+
 bot.on("message", message => {
 	if (message.author.bot) return;
 
@@ -181,9 +204,9 @@ bot.on("message", message => {
 		.addField("Cooldown! 🙃", `You must wait **2** seconds between commands.`)
 		return message.channel.send(cooldownEmbed).then(message => {message.delete(5000)});
 	}
-	if(!message.member.hasPermission("ADMINISTRATOR")){
-		coolDown.add(message.author.id);
-	}
+	//if(!message.member.hasPermissions("ADMINISTRATOR")){
+		//coolDown.add(message.author.id);
+//	}
 
 
 	//Currency
