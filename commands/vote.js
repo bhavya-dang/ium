@@ -7,14 +7,14 @@ exports.run = async (bot, message, args, tools) => {
 
     //let split = '|';
 
-    if(!args[0]) { 
-        
-        return message.channel.send("**Announce an announcment with a title, and a description!** ium announce <title> <description>");
+    if(!args[0]) {
+
+        return message.channel.send("**Include a description for your vote.** `ium vote <description>`");
 
     }
 
     let poll = args.join(" ");
-    
+
     //message.delete();
 
     let announceEmbed = new Discord.RichEmbed()
@@ -25,7 +25,7 @@ exports.run = async (bot, message, args, tools) => {
     let m = await message.channel.send(announceEmbed);
     await m.react(`✅`);
     await m.react(`❌`);
-    
+
 }
 
 module.exports.help = {

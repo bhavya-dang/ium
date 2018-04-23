@@ -6,12 +6,12 @@ let inline = true
 
 module.exports.run = (bot, message, args) => {
 
-  const modCommands = fs.readFileSync("../data/help-info/moderation.txt", "utf8");
-  const infoCommands = fs.readFileSync("../data/help-info/info.txt", "utf8");
-  const utilsCommands = fs.readFileSync("../data/help-info/utils.txt", "utf8");
-  const funCommands = fs.readFileSync("../data/help-info/fun.txt", "utf8");
-  const economyCommands = fs.readFileSync("../data/help-info/economy.txt", "utf8");
-  const mathCommands = fs.readFileSync("../data/help-info/math.txt", "utf8");
+  const modCommands = fs.readFileSync("./moderation.txt", "utf8");
+  const infoCommands = fs.readFileSync("./info.txt", "utf8");
+  const utilsCommands = fs.readFileSync("./utils.txt", "utf8");
+  const funCommands = fs.readFileSync("./fun.txt", "utf8");
+  const economyCommands = fs.readFileSync("./economy.txt", "utf8");
+  const mathCommands = fs.readFileSync("./math.txt", "utf8");
 
     const user = message.guild.members.get(args[0]) || message.member;
 

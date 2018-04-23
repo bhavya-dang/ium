@@ -7,7 +7,7 @@ exports.run = async (bot, message, args, tools) => {
     let invites = await message.guild.fetchInvites().catch(error => {
         return message.channel.send('***I dont have the proper permission to access server invites!***');
     });
-        
+
     invites = invites.array();
 
     arraySort(invites, 'users', { reverse: true });

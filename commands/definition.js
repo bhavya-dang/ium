@@ -17,5 +17,5 @@ exports.run = async (bot, message, args, tools) => {
 }
 
 module.exports.help = {
-    name: "define"
+    name: "definition"
   }

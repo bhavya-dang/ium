@@ -5,7 +5,7 @@ exports.run = (bot, message, args) => {
     weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) {
       if (result === undefined || result.length === 0) {
           const embed = new Discord.RichEmbed()
-          .setAuthor("Please enter a valid location")
+          .setAuthor("**Please enter a valid location.** `ium day <city/town>`")
           .setColor("#f5a3fa")
           return message.channel.send(embed);
       }

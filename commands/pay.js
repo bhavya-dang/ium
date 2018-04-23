@@ -4,6 +4,8 @@ const fs = require("fs");
 
 exports.run = async (bot, message, args) => {
 
+  if(!args[0]) return message.channel.send("**Mention someone for me to pay.** `ium pay <user> <number>`");
+
 if(!iumics[message.author.id]){
     return message.channel.send("**You don't have any iumics.** You can earn iumics by using my commands more!")
   }

@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
 
-   if(!args[0]) return message.channel.send("**Enter an input for me to square.** ium sqr 144");
+   if(!args[0]) return message.channel.send("**Enter an input for me to square.** `ium sqr 144`");
    if(isNaN(args[0])) return message.channel.send("Supply a number! `ium sqr 144`");
 
     let num1 = `${args[0]}`;

@@ -16,6 +16,7 @@ let queue = {};
 const newUsers = new Discord.Collection();
 bot.commands = new Discord.Collection();
 let prefix = botconfig.prefix;
+let ciprefix = prefix.toLowerCase();
 
 fs.readdir("./commands/", (err, files) => {
 	if (err) return console.error(err);
@@ -186,16 +187,15 @@ bot.on("message", message => {
 	  if(err) console.log(err)
 	});
 
-	if(message.content.indexOf(botconfig.prefix) !== 0) return;
-
+	if(message.content.toLowerCase().indexOf(ciprefix) !== 0) return;
 
   	//Prefix + Command
-	let args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
+	let args = message.content.toLowerCase().slice(ciprefix.length).trim().split(/ +/g);
 	let command = args.shift().toLowerCase();
 
 
 	//CoolDown
-	if(!message.content.startsWith(prefix)) return;
+	if(!message.content.toLowerCase().startsWith(ciprefix)) return;
 	if(coolDown.has(message.author.id)){
 		message.delete();
 		let cooldownEmbed = new Discord.RichEmbed()
@@ -248,9 +248,10 @@ bot.on("message", message => {
 	}, coolSeconds * 1000)
 });
 
+/**
 const commands = {
 	'play': (msg) => {
-		if (queue[msg.guild.id] === undefined) return msg.channel.send(`Add some songs to the queue first with ${botconfig.prefix}add`);
+		if (queue[msg.guild.id] === undefined) return msg.channel.send(`Add some songs to the queue first with ${ciprefix}add`);
 		if (!msg.guild.voiceConnection) return commands.join(msg).then(() => commands.play(msg));
 		if (queue[msg.guild.id].playing) return msg.channel.send('**Already playing.** To add that song to the queue type: `ium add <url>`');
 		let dispatcher;
@@ -267,11 +268,11 @@ const commands = {
 			dispatcher = msg.guild.voiceConnection.playStream(ytdl(song.url, { audioonly: true }), { passes : botconfig.passes });
 			let collector = msg.channel.createCollector(m => m);
 			collector.on('message', m => {
-				if (m.content.startsWith(botconfig.prefix + 'pause')) {
+				if (m.content.startsWith(ciprefix + 'pause')) {
 					msg.channel.send('Paused...').then(() => {dispatcher.pause();});
-				} else if (m.content.startsWith(botconfig.prefix + 'resume')){
+				} else if (m.content.startsWith(ciprefix + 'resume')){
 					msg.channel.send('Resumed...').then(() => {dispatcher.resume();});
-				} else if (m.content.startsWith(botconfig.prefix + 'skip')){
+				} else if (m.content.startsWith(ciprefix + 'skip')){
 					msg.channel.send('Skipped...').then(() => {dispatcher.end();});
 				} else if (m.content.startsWith('volume+')){
 					if (Math.round(dispatcher.volume*50) >= 100) return msg.channel.send(`Volume: ${Math.round(dispatcher.volume*50)}%`);
@@ -281,7 +282,7 @@ const commands = {
 					if (Math.round(dispatcher.volume*50) <= 0) return msg.channel.send(`Volume: ${Math.round(dispatcher.volume*50)}%`);
 					dispatcher.setVolume(Math.max((dispatcher.volume*50 - (2*(m.content.split('-').length-1)))/50,0));
 					msg.channel.send(`Volume: ${Math.round(dispatcher.volume*50)}%`);
-				} else if (m.content.startsWith(botconfig.prefix + 'time')){
+				} else if (m.content.startsWith(ciprefix + 'time')){
 					msg.channel.send(`Time of queue: ${Math.floor(dispatcher.time / 60000)}:${Math.floor((dispatcher.time % 60000)/1000) <10 ? '0'+Math.floor((dispatcher.time % 60000)/1000) : Math.floor((dispatcher.time % 60000)/1000)}`);
 				}
 			});
@@ -302,7 +303,7 @@ const commands = {
 	},
 	'add': (msg) => {
 		let url = msg.content.split(' ')[2];
-		//if (url == '' || url === undefined) return msg.channel.send(`You must add a YouTube video url, or id after ${botconfig.prefix}add`);
+		//if (url == '' || url === undefined) return msg.channel.send(`You must add a YouTube video url, or id after ${ciprefix}add`);
 		ytdl.getInfo(url, (err, info) => {
 			if(err) return msg.channel.send('Invalid YouTube Link: ' + err);
 			if (!queue.hasOwnProperty(msg.guild.id)) queue[msg.guild.id] = {}, queue[msg.guild.id].playing = false, queue[msg.guild.id].songs = [];
@@ -317,14 +318,15 @@ const commands = {
 		msg.channel.send(`__**${msg.guild.name}'s Music Queue:**__ Currently **${tosend.length}** songs queued ${(tosend.length > 15 ? '*[Only next 15 shown]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
 	},
 	//'help': (msg) => {
-		//let tosend = ['```xl', botconfig.prefix + 'join : "Join Voice channel of msg sender"',	botconfig.prefix + 'add : "Add a valid youtube link to the queue"', botconfig.prefix + 'queue : "Shows the current queue, up to 15 songs shown."', botconfig.prefix + 'play : "Play the music queue if already joined to a voice channel"', '', 'the following commands only function while the play command is running:'.toUpperCase(), botconfig.prefix + 'pause : "pauses the music"',	botconfig.prefix + 'resume //: "resumes the music"', botconfig.prefix + 'skip : "skips the playing song"', botconfig.prefix + 'time : "Shows the playtdlime of the song."',	'volume+(+++) : "increases volume by 2%/+"',	'volume-(---) : "decreases volume by 2%/-"',	'```'];
+		//let tosend = ['```xl', ciprefix + 'join : "Join Voice channel of msg sender"',	ciprefix + 'add : "Add a valid youtube link to the queue"', ciprefix + 'queue : "Shows the current queue, up to 15 songs shown."', ciprefix + 'play : "Play the music queue if already joined to a voice channel"', '', 'the following commands only function while the play command is running:'.toUpperCase(), ciprefix + 'pause : "pauses the music"',	ciprefix + 'resume //: "resumes the music"', ciprefix + 'skip : "skips the playing song"', ciprefix + 'time : "Shows the playtdlime of the song."',	'volume+(+++) : "increases volume by 2%/+"',	'volume-(---) : "decreases volume by 2%/-"',	'```'];
 		//msg.channel.send(tosend.join('\n'));
 	//},
 };
 
 bot.on('message', msg => {
-	if (!msg.content.startsWith(botconfig.prefix)) return;
-	if (commands.hasOwnProperty(msg.content.toLowerCase().slice(botconfig.prefix.length).split(' ')[0])) commands[msg.content.toLowerCase().slice(botconfig.prefix.length).split(' ')[0]](msg);
+	if (!msg.content.startsWith(ciprefix)) return;
+	if (commands.hasOwnProperty(msg.content.toLowerCase().slice(ciprefix.length).split(' ')[0])) commands[msg.content.toLowerCase().slice(ciprefix.length).split(' ')[0]](msg);
 });
+*/
 
 bot.login(botconfig.token);

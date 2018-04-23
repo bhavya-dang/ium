@@ -7,7 +7,7 @@ if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("*
     let member = message.mentions.members.first();
 
     if(!member)
-    return message.channel.send("**Please mention a user to ban.** 'ium ban <user>'");
+    return message.channel.send("**Please mention a user to ban.** `ium ban <user>``");
 
     if(!member.bannable)
     return message.channel.send("**I cannot ban this user.** The user might have more permissions than me or, I do not have permission to ban them.");
@@ -19,7 +19,7 @@ if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("*
     await member.ban(reason)
       .catch(error => message.channel.send(`Sorry, I couldn't ban because of : ${error}`));
 
-    if(reason == null){
+    if(!reason){
         message.channel.send(`${member.user.username} has been banned by ${message.author.username}`);
         let Banembed = new Discord.RichEmbed()
         .setDescription("Ban")
@@ -31,7 +31,7 @@ if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("*
         message.channel.send(Banembed);
     }
 
-    message.channel.send(`${member.user.username} has been banned by ${message.author.username} because: **__${reason}__**`);
+    message.channel.send(`${member.user.username} has been banned by ${message.author.username} because: **${reason}**`);
     let Banembed = new Discord.RichEmbed()
     .setDescription("Ban")
     .setColor("#ecf0f1")
