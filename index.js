@@ -248,7 +248,6 @@ bot.on("message", message => {
 	}, coolSeconds * 1000)
 });
 
-/**
 const commands = {
 	'play': (msg) => {
 		if (queue[msg.guild.id] === undefined) return msg.channel.send(`Add some songs to the queue first with ${ciprefix}add`);
@@ -305,7 +304,7 @@ const commands = {
 		let url = msg.content.split(' ')[2];
 		//if (url == '' || url === undefined) return msg.channel.send(`You must add a YouTube video url, or id after ${ciprefix}add`);
 		ytdl.getInfo(url, (err, info) => {
-			if(err) return msg.channel.send('Invalid YouTube Link: ' + err);
+			//if(err) return msg.channel.send('Invalid YouTube Link: ' + err);
 			if (!queue.hasOwnProperty(msg.guild.id)) queue[msg.guild.id] = {}, queue[msg.guild.id].playing = false, queue[msg.guild.id].songs = [];
 			queue[msg.guild.id].songs.push({url: url, title: info.title, requester: msg.author.username});
 			msg.channel.send(`added **${info.title}** to the queue`);
@@ -327,6 +326,6 @@ bot.on('message', msg => {
 	if (!msg.content.startsWith(ciprefix)) return;
 	if (commands.hasOwnProperty(msg.content.toLowerCase().slice(ciprefix.length).split(' ')[0])) commands[msg.content.toLowerCase().slice(ciprefix.length).split(' ')[0]](msg);
 });
-*/
+
 
 bot.login(botconfig.token);
