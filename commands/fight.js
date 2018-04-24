@@ -75,6 +75,10 @@ module.exports.run = (bot, message, args) => {
     .setFooter(`${member.user.username} +${xpAdd}XP`, member.displayAvatarURL);
     message.channel.send(fightEmbed)
   }
+
+  fs.writeFile("../data/xp.json", JSON.stringify(xp), (err) => {
+    if(err) cosole.log(err)
+  });
 }
 
 module.exports.help = {
