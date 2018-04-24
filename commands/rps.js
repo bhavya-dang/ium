@@ -5,7 +5,7 @@ exports.run = (bot, message, args) => {
 
   if(!args[0]) return message.channel.send("**Choose Rock, Paper, or Scissors.** `ium rps rock`");
 
-  if(args[0] != 'rock' || args[0] != 'paper' ||args[0] != 'scissors') return message.channel.send("**Choose Rock, Paper, or Scissors.** `ium rps rock`");
+  //if(args[0] != 'rock' || args[0] != 'paper' ||args[0] != 'scissors') return message.channel.send("**Choose Rock, Paper, or Scissors.** `ium rps rock`");
 
   if(!iumics[message.author.id]){
       iumics[message.author.id] = {
@@ -36,9 +36,6 @@ exports.run = (bot, message, args) => {
 
   if(botChoice == 'rock') {
     if(args[0] == 'paper'){
-      iumics[message.author.id] = {
-        iumics: sIumics + iumEarn
-      };
       let rpsEmbed = new Discord.RichEmbed()
       .setColor("#f55783")
       .setAuthor(message.author.username)
@@ -65,9 +62,6 @@ exports.run = (bot, message, args) => {
 
   if(botChoice == 'paper') {
     if(args[0] == 'scissors'){
-      iumics[message.author.id] = {
-        iumics: sIumics + iumEarn
-      };
       let rpsEmbed = new Discord.RichEmbed()
       .setColor("#f55783")
       .setAuthor(message.author.username)
@@ -94,9 +88,6 @@ exports.run = (bot, message, args) => {
 
   if(botChoice == 'scissors') {
     if(args[0] == 'rock'){
-      iumics[message.author.id] = {
-        iumics: sIumics + iumEarn
-      };
       let rpsEmbed = new Discord.RichEmbed()
       .setColor("#f55783")
       .setAuthor(message.author.username)

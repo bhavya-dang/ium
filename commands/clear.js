@@ -9,7 +9,7 @@ exports.run = async (bot, message, args) => {
   message.channel.bulkDelete(args[0]).then(() => {
   message.delete().catch(O_o=>{});
   message.channel.send(`Deleted **${args[0]}** messages.`).then(msg => msg.delete(5000));
-3
+
 });
 
 
